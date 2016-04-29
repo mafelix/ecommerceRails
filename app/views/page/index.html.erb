@@ -8,8 +8,11 @@
 </div>
 </br>
 
-<section></section>
+<section></section>.na
 
+<%=@products.each do |product| %>
+  <p><%=product.name%></p>
+  <%end%>
 <div class="container about">
   <div class="row text-about">
     <h1>About</h1>
@@ -21,8 +24,9 @@
 <br></br>
 
 <hr></hr>
-
+<p><%= @product%> </p>
 <div class="container" id="frontitems">
+<h2>Featured Items</h2>
   <div class="row" >
     <div class="img-responsive" id="rowItems">
     <!-- 

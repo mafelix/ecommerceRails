@@ -6,14 +6,24 @@
   # root 'welcome#index'
   root 'page#index'
 
-  post 'page/index' do
-    @frontpageproduct = Products.last(4);
-    redirect 'page/index'
-  end
+  # namespace :admin do 
+  #   resources :users
+  #   resources :products
+  # end
 
-  get 'products/products' do
-    redirect 'products/products'
-  end
+  
+  resources :user, only: [:new]
+  resources :page, only: [:index, :post]
+  resources :products, only: [:new, :show]
+  
+  # post 'page/index' do
+  #   @frontpageproduct = Products.last(4);
+  #   redirect 'page/index'
+  # end
+
+  # get 'products/index' do
+  #   redirect 'products/index'
+  # end
   
 
   # Example of regular route:

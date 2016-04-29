@@ -1,6 +1,7 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -20,7 +21,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a data-toggle="modal" data-target="#signinModal" href="#">Signin</a></li>
-            <li><a id="products" href="products/products">Products</a></li>
+            <li><a id="products" href="/products(.:format)" >Products</a></li>
             <li><a href="#">Profile</a></li>
             <li role="separator" class="divider"></li>
             <!-- <li><a href="#">Separated link</a></li> -->
@@ -44,7 +45,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Credientials</h4>
       </div>
       <div class="modal-body">
         <form method="post" action="page/index">
