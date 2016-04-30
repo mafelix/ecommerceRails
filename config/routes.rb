@@ -6,15 +6,15 @@
   # root 'welcome#index'
   root 'page#index'
 
-  # namespace :admin do 
-  #   resources :users
-  #   resources :products
-  # end
+  namespace :admin do 
+    resources :users
+    resources :products
+  end
 
   
   resources :user, only: [:new]
   resources :page, only: [:index, :post]
-  resources :products, only: [:new, :show]
+  resources :products, only: [:new, :index, :show]
   
   # post 'page/index' do
   #   @frontpageproduct = Products.last(4);

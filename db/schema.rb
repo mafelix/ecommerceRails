@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 201602) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-  
+
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "email"
