@@ -8,11 +8,11 @@
 </div>
 </br>
 
-<section></section>.na
-
+<section></section>
+<!-- 
 <%=@products.each do |product| %>
-  <p><%=product.name%></p>
-  <%end%>
+  <p><%=product.name%> <%=product.description%> <%=product.price%></p>
+<%end%> -->
 <div class="container about">
   <div class="row text-about">
     <h1>About</h1>
@@ -22,13 +22,35 @@
 
 <section></section>
 <br></br>
-
 <hr></hr>
-<p><%= @product%> </p>
+
+<div class="container how-do-you-register">
+  <div class="row text-register">
+  <h1> How do you register? </h1>
+  <p> <%=Faker::Lorem.paragraphs(7)%></p>
+  </div>
+</div>
+
+
+<!-- featured items on frontpage last 4 items out of the database -->
 <div class="container" id="frontitems">
 <h2>Featured Items</h2>
   <div class="row" >
     <div class="img-responsive" id="rowItems">
+    <%@products.each do |product|%>
+    
+    <div class="col-md-3">  
+        <div class="thumbnail">
+          
+          <img src="<%=product.picture%>">
+          <div class="caption">
+            <h3><%=product.name.titleize%></h3>
+            <p><%=number_to_currency(product.price)%>/gram</p>
+            <p><%=product.description%></p>
+          </div>
+        </div>
+      </div>
+    <%end%>
     <!-- 
       <div class="col-md-3">  
         <div class="thumbnail">

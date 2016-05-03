@@ -1,4 +1,6 @@
   Rails.application.routes.draw do
+  get 'cart/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,12 +11,13 @@
   namespace :admin do 
     resources :users
     resources :products
+    resources :orders
   end
 
-  
-  resources :user, only: [:new]
+  resources :cart, only: [:index]
+  resources :user, only: [:new, :show]
   resources :page, only: [:index, :post]
-  resources :products, only: [:new, :index, :show]
+  resources :products, only: [:index, :show]
   
   # post 'page/index' do
   #   @frontpageproduct = Products.last(4);

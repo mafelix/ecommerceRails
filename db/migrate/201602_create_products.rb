@@ -6,7 +6,8 @@ class CreateProducts < ActiveRecord::Migration
       t.string :description
       t.decimal :price
       t.integer :quantity
-
+      t.belongs_to :orders, index: true
+      
       t.timestamps
     end
   end

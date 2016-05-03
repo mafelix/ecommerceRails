@@ -12,4 +12,14 @@ class ApplicationController < ActionController::Base
       flash[:alert] = "You cannot access this without logging in"
     end
   end
+
+  def current_order
+  
+    if !session[:order_id].nil?
+      Order.find(session[:order_id])
+    else
+      Order.new
+    end
+
+  end
 end

@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# gem for pagination of products
+gem 'kaminari'
+# gem devise for saving cart view
+gem 'devise'
 # lorem ipsum
 gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
