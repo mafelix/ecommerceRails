@@ -3,18 +3,21 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def current_user
-    @current_user ||= User.find(session[:id]) if session[:id]
-  end
 
+  protected
+  
   def restricted_access
     if !current_user
       flash[:alert] = "You cannot access this without logging in"
     end
   end
 
+  def current_user
+    @current_user ||= User.find(session[:id]) if session[:id]
+  end
+
+
   def current_order
-  
     if !session[:order_id].nil?
       Order.find(session[:order_id])
     else

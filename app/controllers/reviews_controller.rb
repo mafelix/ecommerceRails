@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  belongs_to :user
+  belongs_to :product
+  
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   respond_to :html

@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :reviews
+  has_many :orders
+  has_many :products, through: :orders
+  
   has_secure_password
   
   canadian_postal_code = /\A[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Z]{1}[ -]?\\d{1}[A-Z]{1}\\d{1}\z/

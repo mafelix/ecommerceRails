@@ -1,15 +1,15 @@
   Rails.application.routes.draw do
-  resources :carts
+  resources :carts, only: :show
 
-  resources :cart_items
+  resources :cart_items, only: [:create, :update, :destroy] 
 
   resources :reviews
 
-  get 'sessions/new'
+  # get 'sessions/new'
 
-  get 'sessions/create'
+  # get 'sessions/create'
 
-  get 'cart/index'
+  # get 'cart/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

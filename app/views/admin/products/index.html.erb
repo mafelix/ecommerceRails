@@ -1,0 +1,10 @@
+<%= link_to, admin_product_path %>
+
+<% @products.each do |product| %>
+
+<ul>
+  <li><%=@product.name%></li><button>ChangeName</button>
+  <li><%=@product.description%></li><button>ChangeDescription</button>
+  <li><img src="<%=@product.picture%>"><li><button>ChangePicture</button>
+  <li><%=@product.price%></li><button>ChangePrice</button>
+<ul>
