@@ -1,6 +1,7 @@
-<h1> Hello this is the registeration for creating a new user </h1>
+<!-- <h1> Hello this is the registeration for creating a new user </h1> -->
 
-<h1>Sign Up</h1>
+<!-- <h1>Sign Up</h1> -->
+<div class="container">
 <!-- you need to have a user.new for form_for @user or the inputs in the form will not be saved -->
 <%= form_for @user do |f| %> 
 <% if @user.errors.any? %> 
@@ -11,23 +12,33 @@
     <li><%= msg %></li>
     <%end%> 
   </ul>
+  </br>
+  </br>
   <div>
     <%end%> 
     <div> 
-      <%= f.label :email %><br> 
+      <%= f.label :email %><br>
       <%= f.text_field :email %> 
     </div>
     <div>
-      <%= f.label :firstname, "First Name"%><br>
-      <%= f.text_field :firstname %> 
+      <%= f.label :first_name, "First Name"%><br>
+      <%= f.text_field :first_name %> 
     </div>
     <div>
-      <%= f.label :lastname, "Last Name"%><br>
-      <%= f.text_field :lastname %> 
+      <%= f.label :last_name, "Last Name"%><br>
+      <%= f.text_field :last_name %> 
     </div>
+    <div>
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </div>
+    <div>
+      <%= f.label :postal_code %><br>
+      <%= f.text_field :postal_code %> 
     <div>
       <%= f.label :password %><br>
       <%= f.password_field :password %> 
+    </div>
     </div>
     <div>
       <%= f.label :password_confirmation %><br>
@@ -37,4 +48,6 @@
      <!-- post method to create with the params/ check bin/rake routes often to understand the http methods -->
     <%end%>
 
+  <h2>Please enter your information below. We do not sell to people under 19. Please fill out the information and upload two pieces valid pieces of government ID</h2>
+</div>
 

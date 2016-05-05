@@ -11,10 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503021051) do
+ActiveRecord::Schema.define(version: 20160505021245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_items", force: true do |t|
+    t.integer  "cart_id"
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.decimal  "unit_price"
+    t.integer  "quantity"
+    t.integer  "total_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id", using: :btree
+  add_index "cart_items", ["order_id"], name: "index_cart_items_on_order_id", using: :btree
+  add_index "cart_items", ["product_id"], name: "index_cart_items_on_product_id", using: :btree
+
+  create_table "carts", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
+
+  create_table "destroys", force: true do |t|
+    t.string   "cart_item"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orders", force: true do |t|
     t.integer  "category"
@@ -23,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160503021051) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "users_id"
+    t.integer  "invoice_num"
   end
 
   add_index "orders", ["users_id"], name: "index_orders_on_users_id", using: :btree
@@ -39,6 +69,18 @@ ActiveRecord::Schema.define(version: 20160503021051) do
   end
 
   add_index "products", ["orders_id"], name: "index_products_on_orders_id", using: :btree
+
+  create_table "reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.text     "content"
+    t.integer  "rating_out_of_five"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"

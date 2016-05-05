@@ -1,20 +1,23 @@
 class UsersController<ApplicationController
-  canadian_postal_code = /\A[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Z]{1}[ -]?\\d{1}[A-Z]{1}\\d{1}\z/
-  valid_email = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  validates :firstname, presence: true
-  validates :lastname, presence: true
-  # validates :address, presence: true, 
-  # validates :postal_code, presence: true, format: { with: canadian_postal_code }
-  validates :email, presence: true, format: {with: valid_email }
-  validates :password_digest, presence: true
+  
   helper_method :create
+  def new
+    @user = User.new
+  end
 
 
   def create
-    @user = User.create(user_params)
-  end
 
-  
+ 
+    @user = User.create(user_params)
+
+    if @user.save
+      session[:id] = @user.id
+      redirect_to products_path, notice: "#{@user}, your account was successfully created"
+    else
+      render :new
+    end
+  end
 
 
 
@@ -24,7 +27,7 @@ class UsersController<ApplicationController
 protected
 
 def user_params
-  params.require(:user).permit(:first_name, :last_name, :email, :address)
+  params.require(:user).permit(:first_name, :last_name, :email, :address, :postal_code, :password)
 end
 
 end

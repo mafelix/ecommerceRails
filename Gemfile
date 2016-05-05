@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# gem to allow users to upload images
+gem 'rmagick'
 # gem for pagination of products
 gem 'kaminari'
 # gem devise for saving cart view
@@ -32,7 +34,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'

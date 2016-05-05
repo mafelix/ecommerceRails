@@ -1,4 +1,14 @@
   Rails.application.routes.draw do
+  resources :carts
+
+  resources :cart_items
+
+  resources :reviews
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
   get 'cart/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -14,10 +24,11 @@
     resources :orders
   end
 
-  resources :cart, only: [:index]
-  resources :user, only: [:new, :show]
+  resources :cart, only: [:show]
+  resources :users, only: [:index, :new, :create, :show]
   resources :page, only: [:index, :post]
   resources :products, only: [:index, :show]
+  resources :sessions, only: [:new, :create]
   
   # post 'page/index' do
   #   @frontpageproduct = Products.last(4);
