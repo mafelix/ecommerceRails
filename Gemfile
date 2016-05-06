@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# carrierwave for rmagick
+gem 'carrierwave'
 # gem to allow users to upload images
 gem 'rmagick'
 # gem for pagination of products
