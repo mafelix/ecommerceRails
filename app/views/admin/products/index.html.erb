@@ -1,11 +1,12 @@
 <h1 class="text-center">Admin Panel</h1>
+<%=link_to 'Add new product', new_admin_product_path%>
 <% @products.each do |product| %>
 <div class="container">
   <div class="row">
     <div class="img-responsive">
       <div class="col-md-3">
          <div class="thumbnail" style="float:left">
-            <img src="<%=product.picture%>"><button>ChangePicture</button><button>Delete </button><button>Edit</button>
+            <img src="<%=product.picture%>"><button>ChangePicture</button><button>Delete</button><button>Edit</button>
          </div>
       </div>
     </div>
