@@ -24,10 +24,16 @@
     resources :orders
   end
 
+   
+
   resources :cart, only: [:show]
   resources :users, only: [:index, :new, :create, :show]
   resources :page, only: [:index, :post]
-  resources :products, only: [:index, :show]
+ 
+
+  resources :products, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
   resources :sessions, only: [:new, :create]
   
   # post 'page/index' do
