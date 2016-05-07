@@ -1,23 +1,19 @@
 
 <!-- need to add responsive image for mobile friendly individual product show -->  
 <!-- <div class="container-fluid"> -->
-  <div class="row">
-    <div class="img-responsive">
-      <div class="col-xs-12 col-md-7">
-        <img style="float:left" class="show-image" src="<%=@product.picture%>">
+<div class="row">
+  <div class="col-xs-12 col-md-7 text-center">
+    <img class="img-responsive" src="<%=@product.picture%>">
+  </div>
+  <div class="col-xs-12 col-md-5">
+    <div class="product-text" >  
+      <div class="product-title">
+        <h1><u><%=@product.name.titleize%><%=@product.id%></u></h1>
       </div>
-      <div class="col-xs-4 col-md-5">
-        <div class="product-text text-center" >  
-          <div class="product-title">
-            <h1><u><%=@product.name.titleize%><%=@product.id%></u></h1>
-          </div>
-          <h4>This is the description: <%=@product.description%> <%=Faker::Lorem.paragraphs(7)%></h4>
-          <h4><%=number_to_currency(@product.price)%>
+      <h4>This is the description: <%=@product.description%> <%=Faker::Lorem.paragraphs(6)%></h4>
+      <h4><%=number_to_currency(@product.price)%>
 
-        </div>
       </div>
     </div>
   </div>
-</div>
-<!-- <div> -->
 
