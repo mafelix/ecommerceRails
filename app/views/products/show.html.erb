@@ -1,10 +1,14 @@
-<%= link_to 'Back to all Products', products_path %>
 
-
+<!-- need to add responsive image for mobile friendly individual product show -->
 <div class="container text-left">
-  <h1><%=@product.name.titleize%><h1>
-  <p><img style="float:left" class="show-image" src="<%=@product.picture%>"></p>
+  <!-- <h1><%=@product.name.titleize%><h1> -->
+  <div class="img-responsive">
+    <img style="float:left" class="show-image" src="<%=@product.picture%>">
+  </div>
   <div class="product-text" style="float:right">  
+    <div class="product-title" style="font-weight: bold;"
+      <h1><u><%=@product.name.titleize%></u></h1>
+    </div>
     <h4><%=@product.description%><h4>
   </div>
   

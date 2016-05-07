@@ -41,7 +41,7 @@
     
     <div class="col-md-3">  
         <div class="thumbnail">
-          <a href="#"><img src="<%=product.picture%>"></a>
+          <%=link_to image_tag(product.picture), product_path(product)%>
           <div class="caption">
             <h3><%=product.name.titleize%></h3> 
             <p><%=number_to_currency(product.price)%>/gram</p>
