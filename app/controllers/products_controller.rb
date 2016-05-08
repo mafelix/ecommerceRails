@@ -1,7 +1,13 @@
 class ProductsController<ApplicationController
 
   def index
-    @products = Product.all
+    if params[:search] == "" && params[:category] == "Select Category"
+      @products = Product.all
+
+    elsif params[:search] != ""
+      params[:search] = params[:search].downcase
+      @products = Product.searchName(params[:search])
+    end
   end
 
   def show

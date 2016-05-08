@@ -28,6 +28,9 @@ class Admin::ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    
+    @product.destroy
+
+    # destroy product for admin namespace only.
+    redirect_to admin_products_path
   end
 end
