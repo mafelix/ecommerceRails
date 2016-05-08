@@ -5,15 +5,16 @@
   <div class="col-xs-12 col-md-7 text-center">
     <img class="img-responsive" src="<%=@product.picture%>">
   </div>
-  <div class="col-xs-12 col-md-5 text-left">
+  <div class="col-xs-12 col-md-5 text-left  ">
     <div class="product-text" >  
       <div class="product-title">
         <h1><u><%=@product.name.titleize%><%=@product.id%></u> | <%=number_to_currency(@product.price)%></h1>
       </div>
-      <h4>This is the description: <%=@product.description%> <%=Faker::Lorem.paragraphs(6)%></h4>
-      <h4><%=number_to_currency(@product.price)%></h4>
+    
+    <h4>This is the description: <%=@product.description%> <%=Faker::Lorem.paragraphs(6)%></h4>
+    <h4><%=number_to_currency(@product.price)%></h4>
 
-      </div>
     </div>
   </div>
+</div>
 
