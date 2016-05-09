@@ -7,7 +7,7 @@ gem 'carrierwave'
 gem 'rmagick'
 # gem for pagination of products
 gem 'kaminari'
-# gem devise for saving cart view
+# gem devise for user authentication
 gem 'devise'
 # lorem ipsum
 gem 'faker'
