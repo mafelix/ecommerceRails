@@ -1,10 +1,10 @@
 class UsersController<ApplicationController
+before_action :authenticate_user!
   
   helper_method :create
   def new
     @user = User.new
   end
-
 
   def create
 
