@@ -5,18 +5,6 @@
   resources :cart_items, only: [:create, :update, :destroy] 
 
   resources :reviews
-
-  # get 'sessions/new'
-
-  # get 'sessions/create'
-
-  # get 'cart/index'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
   root 'page#index'
 
   namespace :admin do 
@@ -37,6 +25,18 @@
   end
   resources :sessions, only: [:new, :create]
   
+
+  # get 'sessions/new'
+
+  # get 'sessions/create'
+
+  # get 'cart/index'
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+  # root 'welcome#index'
   # post 'page/index' do
   #   @frontpageproduct = Products.last(4);
   #   redirect 'page/index'
