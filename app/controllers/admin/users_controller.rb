@@ -16,7 +16,7 @@ def create
   if @user.save
     redirect_to admin_users_path, notice: "User successfully created, #{@user.firstname}}"
   else
-    render :new # render redirects to url in the same folder AND passes on any params or values so to that page so that 
+    render :new # render redirects to url in the same folder AND passes on any params or values so to that page so that
     # the user doesn't have to enter all the same information again.
   end
 end
@@ -50,7 +50,6 @@ protected
     params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation, :admin)
   end
 end
-
 
 
 end

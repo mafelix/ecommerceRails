@@ -1,4 +1,6 @@
 class ProductsController<ApplicationController
+before_filter :authenticate_user!
+
 
   def index
     if params[:search] == "" || params[:search].nil?
@@ -8,13 +10,13 @@ class ProductsController<ApplicationController
     elsif params[:search] != "" && params[:search] != nil
       params[:search] = params[:search].downcase
       @products = Product.searchName(params[:search])
-    # elsif params[:category] == "Green"
-    #   @products = Product.green
-    # elsif params[:category] == "Accessories"
-    #   @prodcuts = Product.Accessories
-    # elsif params[:category] == "Herbal"
-    #   @products = Product.herbal 
     end
+
+    # respond_to do |format| 
+      # need to implement respond_to format after jeremycodejam!
+      # format.js {}
+
+    # end
 
   end
 
