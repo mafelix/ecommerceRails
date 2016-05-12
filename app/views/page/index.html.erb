@@ -1,18 +1,16 @@
 <div style="z-index: 1" class="jumbo-img-overlay">
-<div class="jumbotron" id="jumbo">
-<!--   <h1></h1> -->
-  <!-- <h1>Welcome to Platinum Can Society</h1> -->
-    <h3 style="font-size: 30px; font-weight: bold; color: black;">Fast, safe, and reliable.</h3>
-    <p style="font-size: 25px; color: black;/* font-weight: bold;*/">We provide the best leading products. Delivered right to your door.</p>
+  <div class="jumbotron" id="jumbo">
+  <!--   <h1></h1> -->
+    <!-- <h1>Welcome to Platinum Can Society</h1> -->
+      <h3 style="font-size: 30px; font-weight: bold; color: black;">Fast, safe, and reliable.</h3>
+      <p style="font-size: 25px; color: black;/* font-weight: bold;*/">We provide the best leading products. Delivered right to your door.</p>
+    </div>
   </div>
-</div>
 </br>
 
 <section></section>
-<!-- 
-<%=@products.each do |product| %>
-  <p><%=product.name%> <%=product.description%> <%=product.price%></p>
-<%end%> -->
+
+
 <div class="container about">
   <div class="row text-about">
     <h1>About</h1>
@@ -26,73 +24,44 @@
  -->
 <div class="container how-do-you-register">
   <div class="row text-register">
-  <h1> How do you register? </h1>
-  <p> <%=Faker::Lorem.paragraphs(7)%></p>
+    <h1> How do you register? </h1>
+    <p> <%=Faker::Lorem.paragraphs(7)%></p>
   </div>
 </div>
 
 
-<!-- featured items on frontpage last 4 items out of the database -->
+<!-- featured items on frontpage out of the database -->
 <div class="container" id="frontitems">
-<h2>Featured Items</h2>
-  <div class="row" >
-    <div class="img-responsive" id="rowItems">
-    <%@products.each do |product|%>
-    
-    <div class="col-md-3">  
-        <div class="thumbnail">
-          <%=link_to image_tag(product.picture), product_path(product)%>
-          <div class="caption">
-            <h3><%=product.name.titleize%></h3> 
-            <p><%=number_to_currency(product.price)%>/gram</p>
-            <p><%=product.description%></p>
-            <p><%=link_to 'product', product_path(product)%></p>
-          </div>
-        </div>
-      </div>
-    <%end%>
-    <!-- 
-      <div class="col-md-3">  
-        <div class="thumbnail">
-          <img src="http://lorempixel.com/400/200/">
-          <div class="caption">
-            <h3>Hippopotamus</h3>
-            <p>Hello hello hello</p>
-          </div>
-        </div>
-      </div>
+  <h2>Featured Items</h2>
+    <div class="row" >
+      <div class="img-responsive" id="rowItems">
+      <%@products.each do |product|%>
+        <%if product.featured == true%>
 
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <img src="http://lorempixel.com/400/200/">
-          <div class="caption">
-            <h3>Hippopotamus</h3>
-            <p>Hello hello hello</p>
+        <div class="col-md-3">
+            <div class="thumbnail">
+              <%=link_to image_tag(product.picture), product_path(product)%>
+              <div class="caption">
+                <h3><%=product.name.titleize%></h3>
+                <p><%=number_to_currency(product.price)%>/gram</p>
+                <p><%=product.description%></p>
+                <p><%=link_to 'product', product_path(product)%></p>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+  <!--
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <img src="http://lorempixel.com/400/200/">
+            <div class="caption">
+              <h3>Hippopotamus</h3>
+              <p>Hello hello hello</p>
+            </div>
           </div>
         </div>
+   -->
       </div>
-
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <img src="http://lorempixel.com/400/200/">
-          <div class="caption">
-            <h3>Hippopotamus</h3>
-            <p>Hello hello hello</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <img src="http://lorempixel.com/400/200/">
-          <div class="caption">
-            <h3>Hippopotamus</h3>
-            <p>Hello hello hello</p>
-          </div>
-        </div>
-      </div>
- -->
     </div>
   </div>
-</div>
-

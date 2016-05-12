@@ -1,30 +1,30 @@
   Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :path => "admin"
   resources :carts, only: :show
 
-  resources :cart_items, only: [:create, :update, :destroy] 
+  resources :cart_items, only: [:create, :update, :destroy]
 
   resources :reviews
   root 'page#index'
 
-  namespace :admin do 
+  namespace :admin do
     resources :users
     resources :products
     resources :orders
   end
 
-   
+
 
   resources :cart, only: [:show]
   resources :users, only: [:index, :new, :create, :show]
   resources :page, only: [:index, :post]
- 
+
 
   resources :products, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
   end
   resources :sessions, only: [:new, :create]
-  
+
 
   # get 'sessions/new'
 
@@ -45,7 +45,7 @@
   # get 'products/index' do
   #   redirect 'products/index'
   # end
-  
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
