@@ -1,5 +1,7 @@
-<p>Welcome <%= @email %>!</p>
+<p>Welcome to Platinum Can, <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Your will be able to begin purchasing products after we verify your identification.</p>
+
+<p>Please confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
