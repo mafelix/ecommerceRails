@@ -17,3 +17,6 @@
 
 # Ignore secrets ENV file.
 /config/secrets.yml
+
+/db/.DS_Store
+.DS_Store

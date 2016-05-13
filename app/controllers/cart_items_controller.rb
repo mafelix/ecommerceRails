@@ -8,32 +8,26 @@ class CartItemsController < ApplicationController
     respond_with(@cart_items)
   end
 
-  def show
-    respond_with(@cart_item)
-  end
-
-  def new
-    @cart_item = CartItem.new
-    respond_with(@cart_item)
-  end
-
-  def edit
-  end
 
   def create
-    @cart_item = CartItem.new(cart_item_params)
-    @cart_item.save
-    respond_with(@cart_item)
+    @order = current_order
+    @order_item = @order.cart_items.new(cart_item_params)
+    @order.save
+    session[:order_id] = @order.id
   end
 
   def update
-    @cart_item.update(cart_item_params)
-    respond_with(@cart_item)
+    @order = current_order
+    @order_cart_item = @order.cart_items.find(params[:id])
+    @order_cart_item.update_attributes(cart_item_params)
+    @order_cart_items = @order.cart_items
   end
 
   def destroy
-    @cart_item.destroy
-    respond_with(@cart_item)
+    @order = current_order
+    @order_cart_item = @order.cart_items.find(params[:id])
+    @order_cart_item.destroy
+    @order_cart_items = @order.cart_items
   end
 
   private

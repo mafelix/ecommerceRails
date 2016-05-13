@@ -8,10 +8,10 @@
         </div>
       </div>
       <!-- <div class="col-md-3">   -->
-      
+
         <% @products.each do |product| %>
           <%=link_to product_path(product) do %>
-            <div class="col-md-3">  
+            <div class="col-md-3">
               <!-- link_to for title and image to product#show(product) -->
               <div class="thumbnail">
                <%=image_tag(product.picture)%>
@@ -24,7 +24,7 @@
               </div>
             </div>
         <%end%>
-    
+
       </div>
     </div>
 </div>
@@ -40,5 +40,5 @@
       </div>
     </div>
   </div>
-    
+
 </div>
