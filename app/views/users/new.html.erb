@@ -3,49 +3,41 @@
 <!-- <h1>Sign Up</h1> -->
 <div class="container" style="margin-top:30px">
 <!-- you need to have a user.new for form_for @user or the inputs in the form will not be saved -->
-<%= form_for @user do |f| %> 
-<% if @user.errors.any? %> 
+<%= form_for @user do |f| %>
+<% if @user.errors.any? %>
 <div>
   <%= pluralize(@user.errors.count, "errors") %> prevented the account from being created:
   <ul>
-    <% @user.errors.full_messages.each do |msg| %> 
+    <% @user.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
-    <%end%> 
+    <%end%>
   </ul>
   </br>
   </br>
   <div>
-    <%end%> 
-    <div> 
+    <%end%>
+    <div>
       <%= f.label :email %><br>
-      <%= f.text_field :email %> 
+      <%= f.text_field :email %>
     </div>
     <div>
       <%= f.label :username %><br>
       <%= f.text_field :username %>
     </div>
-    <!-- 
-    <div>
-      <%= f.label :first_name, "First Name"%><br>
-      <%= f.text_field :first_name %> 
-    </div>
-    <div>
-      <%= f.label :last_name, "Last Name"%><br>
-      <%= f.text_field :last_name %> 
-    </div> -->
+
     <div>
       <%= f.label :address %><br>
       <%= f.text_field :address %>
     </div>
     <div>
       <%= f.label :postal_code %><br>
-      <%= f.text_field :postal_code %> 
+      <%= f.text_field :postal_code %>
     <div>
       <%= f.label :password %><br>
-      <%= f.password_field :password %> 
+      <%= f.password_field :password %>
     </div>
       <%= f.label :picture %>
-      <%= f.file_field :picture %>  
+      <%= f.file_field :picture %>
     </div>
       <%= f.label :picture_two %>
       <%= f.file_field :picture_two %>
@@ -59,4 +51,3 @@
 
   <h2>Please enter your information above. We do not sell to people under 19. Please fill out the information and upload two pieces valid pieces of government ID</h2>
 </div>
-

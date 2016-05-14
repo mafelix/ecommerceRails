@@ -1,5 +1,6 @@
   Rails.application.routes.draw do
-  devise_for :users, :path => "admin"
+  devise_for :users
+  # ,  :path => "admin"
   resources :carts, only: :show
 
   resources :cart_items, only: [:create, :update, :destroy]

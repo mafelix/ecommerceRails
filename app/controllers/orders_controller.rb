@@ -1,1 +1,3 @@
-orders_controller.rb
+class OrderController<ApplicationController
+
+end

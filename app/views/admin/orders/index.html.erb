@@ -1,0 +1,19 @@
+<h1> this is the order page</h1>
+  <table class="table">
+    <tr>
+      <th>Invoice #</th>
+      <th>Address</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Total</th>
+      <th>Shipping Cost</th>
+    </tr>
+    <% @orders.each do |order| %>
+    <tr>
+      <td><%=order.invoice_num%></td>
+      <td><%=order.total_cost%></td>
+      <td><%=order.shipping_cost%></td>
+      <td><%=order.cart_items%></td>
+    </tr>
+    <%end%>
+  </table>
