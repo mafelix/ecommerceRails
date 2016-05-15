@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# font awesome for social media buttons
+gem "font-awesome-rails"
 # carrierwave for user images
 gem 'carrierwave'
 # gem to support carrierwave

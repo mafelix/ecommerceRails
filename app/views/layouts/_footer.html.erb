@@ -1,6 +1,8 @@
 <div id="footer" class="text-center text-muted footer">
   <div class="container">
   This is the footer
+  <!-- <a href="#" class="btn btn-block btn-social btn-twitter">Follow us on twitter</a> -->
+  <button class="btn btn-facebook"><i class="fa fa-facebook"></i> | Connect with Facebook</button>
   <% if current_user%>
     <% if admin?%>
       <%=link_to 'admin section', admin_products_path %>
