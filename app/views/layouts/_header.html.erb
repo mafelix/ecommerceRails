@@ -11,7 +11,7 @@
       </button>
       <a class="navbar-brand" href="/">Platinum Can Society</a>
     </div>
-     
+
       <%=form_tag(products_path, {method:'get' ,:class => 'navbar-form navbar-left'}) do%>
         <div class="form-group">
           <%=text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search"%>
@@ -41,6 +41,8 @@
           </ul>
         </li>
       </ul>
+
+
       <!-- <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
