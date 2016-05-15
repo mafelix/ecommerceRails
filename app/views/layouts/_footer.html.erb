@@ -1,6 +1,10 @@
 <div id="footer" class="text-center text-muted footer">
   <div class="container">
   This is the footer
-    <%=link_to 'admin section', admin_products_path %>
+  <% if current_user%>
+    <% if admin?%>
+      <%=link_to 'admin section', admin_products_path %>
+    <%end%>
+  <%end%>
   </div>
 </div>
