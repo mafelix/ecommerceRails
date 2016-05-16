@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513232852) do
+ActiveRecord::Schema.define(version: 20160516204441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160513232852) do
     t.datetime "updated_at"
     t.integer  "category"
     t.boolean  "featured",                            default: false
+    t.boolean  "active",                              default: true
   end
 
   add_index "products", ["orders_id"], name: "index_products_on_orders_id", using: :btree
@@ -86,8 +87,6 @@ ActiveRecord::Schema.define(version: 20160513232852) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "firstname"
-    t.string   "lastname"
     t.text     "address"
     t.string   "postal_code"
     t.boolean  "admin"
