@@ -1,4 +1,5 @@
 class Order<ActiveRecord::Base
+
   belongs_to :user
   has_many :cart_items
 
@@ -15,4 +16,5 @@ class Order<ActiveRecord::Base
   def update_subtotal
       self[:subtotal] = subtotal
   end
+
 end

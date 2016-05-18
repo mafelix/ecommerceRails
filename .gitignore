@@ -20,3 +20,6 @@
 
 /db/.DS_Store
 .DS_Store
+
+# Ignore byebug history file
+.byebug_history
