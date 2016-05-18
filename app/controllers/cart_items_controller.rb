@@ -1,12 +1,12 @@
 class CartItemsController < ApplicationController
   before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  # respond_to :html
 
-  def index
-    @cart_items = CartItem.all
-    respond_with(@cart_items)
-  end
+  # def index
+  #   @cart_items = CartItem.all
+  #   respond_with(@cart_items)
+  # end
 
 
   def create

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# byebug for debugging
+gem 'byebug'
 # font awesome for social media buttons
 gem "font-awesome-rails"
 # carrierwave for user images

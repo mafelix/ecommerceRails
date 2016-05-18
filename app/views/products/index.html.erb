@@ -1,4 +1,4 @@
-
+<%=@order.inspect%>
   <div class="container" id="productitems">
     <div class="row" >
       <div class="img-responsive" id="rowItems">
@@ -8,7 +8,6 @@
         </div>
       </div>
       <!-- <div class="col-md-3">   -->
-      <%= form_for @cart_item do |f| %>
         <% @products.each do |product| %>
           <%=link_to product_path(product) do %>
             <div class="col-md-3">
@@ -19,6 +18,7 @@
                   <h3><%=product.name.titleize%></h3>
           <%end%>
 
+          <%= form_for @cart_item, remote: true do |f| %>
           <div>
             <div class="input-group">
               <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
@@ -28,13 +28,13 @@
               </div>
             </div>
           </div>
+          <%end%>
                     <p><%=number_to_currency(product.price)%></p>
                   <p><%=product.description%></p>
                 </div>
               </div>
             </div>
         <%end%>
-      <%end%>
       </div>
     </div>
 </div>

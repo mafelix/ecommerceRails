@@ -1,6 +1,7 @@
 class CartItem < ActiveRecord::Base
   belongs_to :cart
-  has_and_belongs_to_many :products
+  # has_and_belongs_to_many :products
+  belongs_to :product
   belongs_to :order
 
   validates :quantity, presence: true, numericality: {only_integer: true, greater_than: 0}
@@ -24,11 +25,11 @@ class CartItem < ActiveRecord::Base
 
   private
 
-  # def product_present
-  #   if product.nil?
-  #     errors.add(:product, "Is not valid or is not active")
-  #   end
-  # end
+  def product_present
+    if product.nil?
+      errors.add(:product, "Is not valid or is not active")
+    end
+  end
 
   def order_present
     if order.nil?

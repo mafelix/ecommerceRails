@@ -17,6 +17,7 @@ before_filter :authenticate_user!
 
   def show
     @product = Product.find(params[:id])
+    @cart_item = current_order.cart_items.new
   end
 
 end

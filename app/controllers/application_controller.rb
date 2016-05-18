@@ -4,11 +4,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # before_action :configure_permitted_params, if: :devise_controller?
   helper_method :current_order, :admin?, :current_user
-
-  protected
+  # before_action :current_order
+  # protected
   # def configure_permitted_params
   #   devise_parameters_sanitizer.for(:sign_up) {|u| u.permit(:username, :email, :password, :password_confirmation)}
   # end
+  def current_order
+    if !session[:order_id].nil?
+      Order.find(session[:order_id])
+    else
+      Order.new
+    end
+  end
 
   def restricted_access
     if !current_user
@@ -31,12 +38,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_order
-    if !session[:order_id].nil?
-      Order.find(session[:order_id])
-    else
-      Order.new
-    end
 
-  end
 end
