@@ -1,5 +1,5 @@
-body{
-  font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+html, body{
+  font-family: Helvetica, Arial, sans-serif;
   background-color: sand;
   height:100%;
 /*  background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/02/Girls-with-Weed-Wallpaper.jpg");
@@ -7,9 +7,8 @@ body{
   background-attachment: fixed;
 *//*background-position: fixed;*/
 }
-
-#wrap {
-  min-height: 100%;
+.header{
+  background-color: black;
 }
 
 #main {
@@ -29,12 +28,10 @@ body{
   /*background-position : center;*/
 }
 
-.jumbo-img-overlay{
-  background: rgba(70,72,85,0.5);
-  height:inherit;
-}
-
+`
 #frontitems{
+  border-style: solid;
+  background-color:#8BA663;
   margin-top:10%;
   text-align:center;
 }
@@ -47,13 +44,14 @@ img{
 
 
 .footer {
+  margin-top: 185px;
   position: relative;
-  margin-top: -150px; /* negative value of footer height */
-  height: 200px;
+  height: 185px;
   clear:both;
-  padding-top:20px;
+  
   background-color: #e7e7e7;
 }
+margin-top: 10085;
 
 
 
