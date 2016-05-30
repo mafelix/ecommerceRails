@@ -32,7 +32,6 @@
           <%if current_user %>
             <li><a data-toggle="modal" data-target="#" href="#"><%=link_to'Log Out', destroy_user_session_path, :method => :delete%></a></li>
             <li><a data-toggle="modal" data-target="#" href="#"><%=link_to 'Edit Profile',edit_user_registration_path%></a></li>
-            <!-- <li><a data-toggle="modal" data-target="#" href="#"><%=link_to 'Sign up', new_user_path%></a></li> -->
 
             <li><a id="products" href="#" ><%=link_to 'Products', products_path%></a></li>
           <%else%>

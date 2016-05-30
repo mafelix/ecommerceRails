@@ -5,6 +5,15 @@
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
+    <%=f.label :address,"New address" %>
+    <%=f.text_field :address %> <em>Please make sure your new address is correct</em><br />
+  </div>
+
+  <div class="field">
+    <%=f.label :postal_code%>
+    <%=f.text_field :postal_code%> <em>Same with your new postal code</em><br />
+  </div>
+  <div class="field">
     <%= f.label :password, "New password" %><br />
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />

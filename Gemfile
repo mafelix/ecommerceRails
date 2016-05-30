@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# shopping cart I give up on self implementation
+gem 'acts_as_shopping_cart', '~> 0.4.0'
 # byebug for debugging
 gem 'byebug'
 # font awesome for social media buttons

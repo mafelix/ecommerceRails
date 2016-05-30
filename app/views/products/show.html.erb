@@ -4,13 +4,24 @@
 <div class="row">
   <div class="col-xs-12 col-md-7 text-center">
     <img class="img-responsive" src="<%=@product.picture%>">
+    <%= form_for @cart_item, remote: true do |f| %>
+    <div>
+      <div class="input-group">
+        <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+        <div class="input-group-btn">
+          <%= f.submit "Add to Cart", class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+    <%end%>
   </div>
   <div class="col-xs-12 col-md-5 text-left  ">
     <div class="product-text" >  
+
       <div class="product-title">
         <h1><u><%=@product.name.titleize%><%=@product.id%></u> | <%=number_to_currency(@product.price)%></h1>
       </div>
-    
+
     <h4>This is the description: <%=@product.description%> <%=Faker::Lorem.paragraphs(6)%></h4>
     <h4><%=number_to_currency(@product.price)%></h4>
 

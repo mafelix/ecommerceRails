@@ -8,6 +8,16 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%=f.label :address,"New address" %><br/>
+    <%=f.text_field :address %> <em>Please make sure your new address is correct</em><br />
+  </div>
+
+  <div class="field">
+    <%=f.label :postal_code%><br/>
+    <%=f.text_field :postal_code%> <em>Same with your new postal code</em><br />
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
