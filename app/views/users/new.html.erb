@@ -36,15 +36,11 @@
       <%= f.label :password %><br>
       <%= f.password_field :password %>
     </div>
-      <%= f.label :picture %>
-      <%= f.file_field :picture %>
-    </div>
-      <%= f.label :picture_two %>
-      <%= f.file_field :picture_two %>
     <div>
-      <%= f.label :password_confirmation %><br>
-      <%= f.password_field  :password_confirmation %><br>
+      <%= f.label :pictureid %>
+      <%= f.file_field :pictureid, multiple: true %>
     </div>
+
     <div><%= f.submit "Submit" %></div>
      <!-- post method to create with the params/ check bin/rake routes often to understand the http methods -->
     <%end%>
