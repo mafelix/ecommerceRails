@@ -22,12 +22,9 @@
     <%= f.email_field :email, autofocus: true %><br/>
   </div>
 
-  <div class="field">
-    <%= f.label :picture_one %><br/>
-    <%= f.file_field :picture_one %>
-
-    <%= f.label :picture_two %><br/>
-    <%= f.file_field :picture_two %>
+  <div>
+    <%= f.label :pictureid %>
+    <%= f.file_field :pictureid, multiple: true %>
   </div>
 
   <div class="field">

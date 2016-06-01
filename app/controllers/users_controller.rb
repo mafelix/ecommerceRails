@@ -5,17 +5,17 @@ class UsersController<ApplicationController
   end
 
 
-  def create
+  # def create
 
-    @user = User.create(user_params)
-    if @user.save
-      session[:id] = @user.id
-      redirect_to products_path, notice: "#{@user}, your account was successfully created"
-    else
-      render :new
-    end
+  #   @user = User.create(user_params)
+  #   if @user.save
+  #     session[:id] = @user.id
+  #     redirect_to products_path, notice: "#{@user}, your account was successfully created"
+  #   else
+  #     render :new
+  #   end
 
-  end
+  # end
 
 
 
@@ -24,9 +24,9 @@ class UsersController<ApplicationController
 
 protected
 
-def user_params
-  params.require(:user).permit(:username, :first_name, :last_name, :email, :address, :postal_code, :password, :passwords_confirmation, {pictureid: []})
-end
+# def user_params
+#   params.require(:user).permit(:username, :first_name, :last_name, :email, :address, :postal_code, :password, :passwords_confirmation, {pictureid: []})
+# end
 
 
 end
