@@ -23,6 +23,10 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off"%>
+  </div>
+  <div class="form-group">
     <div class="row">
       <div class="col-sm-6">
         <%= f.label :first_name %>
@@ -36,8 +40,17 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: "form-control"%>
+    <div class="row">
+      <div class="col-sm-8">
+        <%= f.label :address %>
+        <em>Please include your suite/apt number if avaliable.</em>
+        <%= f.text_field :address, class: "form-control"%>
+      </div>
+      <div class ="col-sm-4">
+        <%= f.label :postal_code %>
+        <%= f.text_field :postal_code, class: "form-control"%>
+      </div>
+    </div>
   </div>
 
   <div class="field form-group">
@@ -60,10 +73,6 @@
     <%= f.file_field :pictureid, multiple: true %>
   </div>
 
-  <div class="field form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
 
   <div class="actions form-group">
     <%= f.submit "Sign up" %>
