@@ -1,19 +1,24 @@
 <h2>Sign up</h2>
 <h1> this is registerations/users/new.html.erb</h1>
-<%= form_for(@user, url: registration_path(@user)) do |f| %>
+<div class="container">
+<%= form_for(@user, url: registration_path(@user), html: {:class => "form-horizontal"}) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true  %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email%>
+  <div class="form-group">
+    <div class="control-label">
+      <%= f.label :email %><br />
+        <div class="col-sm-10">
+          <%= f.email_field :email, class: "form-control"%>
+        </div>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -22,7 +27,7 @@
   </div>
 
 
-  <div class="field">
+  <div class="field form-group">
       <%= f.label :first_name %><br/>
       <%= f.text_field :first_name%><br/>
 
@@ -37,18 +42,19 @@
       <%= f.text_field :postal_code %><br/>
   </div>
 
-  <div>
+  <div class="form-group">
+    <%= f.label :pictureid, "Two Pieces of Government ID"%>
     <%= f.file_field :pictureid, multiple: true %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
+  <div class="actions form-group">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
 <%= render "users/shared/links" %>
+</div>
