@@ -53,21 +53,6 @@
     </div>
   </div>
 
-  <div class="field form-group">
-      <%= f.label :first_name %><br/>
-      <%= f.text_field :first_name%><br/>
-
-      <%= f.label :last_name %><br/>
-      <%= f.text_field :last_name %><br/>
-
-      <%= f.label :address %>
-        <em>Please include your suite/apt number if avaliable.</em><br/>
-      <%= f.text_field :address %><br/>
-
-      <%= f.label :postal_code %><br/>
-      <%= f.text_field :postal_code %><br/>
-  </div>
-
   <div class="form-group">
     <%= f.label :pictureid, "Two Pieces of Government ID"%>
     <%= f.file_field :pictureid, multiple: true %>
@@ -75,7 +60,7 @@
 
 
   <div class="actions form-group">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "btn btn-success" %>
   </div>
 <% end %>
 <%= render "users/shared/links" %>
