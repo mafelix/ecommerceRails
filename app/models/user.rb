@@ -17,15 +17,12 @@ class User < ActiveRecord::Base
 
 
 
-  canadian_postal_code = /\A[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Z]{1}[ -]?\\d{1}[A-Z]{1}\\d{1}\z/
-  # valid_email = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
-  # validates :address, presence: true
+  canadian_postal_code = /\A[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1}[ -]?\d{1}[A-Z]{1}\d{1}\z/
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :address, presence: true
   validates :postal_code, presence: true ,format: {with: canadian_postal_code}
-  # validates :email, presence: true, format: {with: valid_email,
-                                             # message: "Invalid email address" }
-  # validates :password_digest, presence: true
 
 
 
