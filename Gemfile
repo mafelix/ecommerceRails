@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
-# byebug for debugging
-gem 'byebug'
+#figaro for fog/amazon s3
+gem 'figaro'
+# pry for debugging
+gem 'pry'
 # font awesome for social media buttons
 gem "font-awesome-rails"
 # carrierwave for user images

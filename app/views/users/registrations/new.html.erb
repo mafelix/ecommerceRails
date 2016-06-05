@@ -1,5 +1,5 @@
 <h2 class="text-center">Sign up for your account</h2>
-<h1 class="text-center"> this is registerations/users/new.html.erb</h1>
+<!-- <h1 class="text-center"> this is registerations/users/new.html.erb</h1> -->
 <div class="container">
 <%= form_for(@user, url: registration_path(@user), html: {:class => "form"}) do |f| %>
   <%= devise_error_messages! %>
@@ -48,14 +48,16 @@
       </div>
       <div class ="col-sm-4">
         <%= f.label :postal_code %>
+        <em>For ex. A1A 1A1</em><br/>
         <%= f.text_field :postal_code, class: "form-control"%>
       </div>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :pictureid, "Two Pieces of Government ID"%>
-    <%= f.file_field :pictureid, multiple: true %>
+    <%= f.label :image_one, "Two pieces please"%>
+      <%= f.file_field :image_one %>
+      <%= f.file_field :image_two %>
   </div>
 
 

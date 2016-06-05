@@ -28,7 +28,7 @@ end
 def update
   @user = User.find(params[:id])
 
-  if @movie.update_attributes(admin_user_params)
+  if @user.update_attributes(admin_user_params)
     flash[:alert] = "User successfully edited"
   else
     render :edit

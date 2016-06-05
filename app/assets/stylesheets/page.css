@@ -11,6 +11,7 @@ html, body{
   background-color: black;
 }
 
+
 #main {
   overflow:auto;
   padding-bottom:250px; /* this needs to be bigger than footer height*/
@@ -46,7 +47,7 @@ img{
 .footer {
   margin-top: 185px;
   position: relative;
-  height: 185px;
+  height: 195px;
   clear:both;
   
   background-color: #e7e7e7;

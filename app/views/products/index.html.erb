@@ -1,4 +1,3 @@
-<%=@order.inspect%>
   <div class="container" id="productitems">
     <div class="row" >
       <div class="img-responsive" id="rowItems">
@@ -7,7 +6,10 @@
 
         </div>
       </div>
-      <!-- <div class="col-md-3">   -->
+      <!-- if @products object is an empty array -->
+      <%if @products == []%>
+        <%= render 'nothinghere'%>
+      <%end%>
         <% @products.each do |product| %>
           <%=link_to product_path(product) do %>
             <div class="col-md-3">
