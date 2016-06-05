@@ -47,7 +47,7 @@ end
 
 protected
   def admin_user_params
-    params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation, :admin)
+    params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation, :admin, :verified)
   end
 end
 
