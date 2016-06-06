@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-#figaro for fog/amazon s3
+# fog gem for carrierwave:fog
+gem 'fog'
+#figaro for fog environment variables
 gem 'figaro'
 # pry for debugging
 gem 'pry'
