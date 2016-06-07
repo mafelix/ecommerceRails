@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-      
+before_filter :restricted_access
   def new
     @product = Product.new
   end

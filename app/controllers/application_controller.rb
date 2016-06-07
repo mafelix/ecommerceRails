@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :current_order, :admin?, :current_user
+  helper_method :current_order, :admin?, :restricted_access
   # before_action :current_order
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def restricted_access
-    if !admin?
+    if !current_user || current_user.admin != true
       flash[:alert] = "You do not have access to this."
       redirect_to page_index_path
     end
