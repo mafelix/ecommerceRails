@@ -14,10 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_order
-    if !session[:order_id].nil?
-      Order.find(session[:order_id])
+    if !session[:cart_id].nil?
+      Cart.find(session[:cart_id])
     else
-      Order.new
+      Cart.new
     end
   end
 

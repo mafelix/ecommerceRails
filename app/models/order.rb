@@ -1,8 +1,7 @@
 class Order<ActiveRecord::Base
-
+# still need to modify database schema to reflect associations
   belongs_to :user
-  has_many :cart_items
-
+  has_many :carts
   before_save :update_subtotal
 
   # before saving the order update the subtotal of the order.

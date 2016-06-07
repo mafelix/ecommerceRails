@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605054418) do
+ActiveRecord::Schema.define(version: 20160607221656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160605054418) do
   create_table "cart_items", force: true do |t|
     t.integer  "cart_id"
     t.integer  "product_id"
-    t.integer  "order_id"
     t.decimal  "unit_price"
     t.integer  "quantity"
     t.integer  "total_price"
@@ -28,15 +27,16 @@ ActiveRecord::Schema.define(version: 20160605054418) do
   end
 
   add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id", using: :btree
-  add_index "cart_items", ["order_id"], name: "index_cart_items_on_order_id", using: :btree
   add_index "cart_items", ["product_id"], name: "index_cart_items_on_product_id", using: :btree
 
   create_table "carts", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order_id"
   end
 
+  add_index "carts", ["order_id"], name: "index_carts_on_order_id", using: :btree
   add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
 
   create_table "orders", force: true do |t|
@@ -59,15 +59,12 @@ ActiveRecord::Schema.define(version: 20160605054418) do
     t.string   "description"
     t.decimal  "price",       precision: 8, scale: 2
     t.integer  "quantity"
-    t.integer  "orders_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category"
     t.boolean  "featured",                            default: false
     t.boolean  "active",                              default: true
   end
-
-  add_index "products", ["orders_id"], name: "index_products_on_orders_id", using: :btree
 
   create_table "reviews", force: true do |t|
     t.integer  "user_id"
