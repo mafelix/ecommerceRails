@@ -16,6 +16,7 @@ class PictureidUploader < CarrierWave::Uploader::Base
     "/#{model.class.to_s.underscore}/#{model.id}/#{model.first_name.capitalize}-#{model.last_name.capitalize}/#{mounted_as}"
   end
 
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
