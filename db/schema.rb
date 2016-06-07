@@ -30,14 +30,12 @@ ActiveRecord::Schema.define(version: 20160607221656) do
   add_index "cart_items", ["product_id"], name: "index_cart_items_on_product_id", using: :btree
 
   create_table "carts", force: true do |t|
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "order_id"
   end
 
   add_index "carts", ["order_id"], name: "index_carts_on_order_id", using: :btree
-  add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
 
   create_table "orders", force: true do |t|
     t.integer  "category"
