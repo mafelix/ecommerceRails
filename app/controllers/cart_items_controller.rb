@@ -10,24 +10,24 @@ class CartItemsController < ApplicationController
 
 
   def create
-    @order = current_order
-    @order_item = @order.cart_items.new(cart_item_params)
-    @order.save
-    session[:order_id] = @order.id
+    @cart = current_order
+    @cart_item = @cart.cart_items.new(cart_item_params)
+    @cart.save
+    session[:cart_id] = @cart.id
   end
 
   def update
-    @order = current_order
-    @order_cart_item = @order.cart_items.find(params[:id])
-    @order_cart_item.update_attributes(cart_item_params)
-    @order_cart_items = @order.cart_items
+    @cart = current_order
+    @cart_cart_item = @cart.cart_items.find(params[:id])
+    @cart_cart_item.update_attributes(cart_item_params)
+    @cart_cart_items = @cart.cart_items
   end
 
   def destroy
-    @order = current_order
-    @order_cart_item = @order.cart_items.find(params[:id])
-    @order_cart_item.destroy
-    @order_cart_items = @order.cart_items
+    @cart = current_order
+    @cart_cart_item = @cart.cart_items.find(params[:id])
+    @cart_cart_item.destroy
+    @cart_cart_items = @cart.cart_items
   end
 
   private
@@ -38,4 +38,5 @@ class CartItemsController < ApplicationController
     def cart_item_params
       params.require(:cart_item).permit(:cart_id, :product_id, :order_id, :unit_price, :quantity, :total_price)
     end
+
 end
