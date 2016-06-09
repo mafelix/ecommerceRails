@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
     if !session[:cart_id].nil?
       Cart.find(session[:cart_id])
     else
-      Cart.new
+      @cart = Cart.new
+      session[:cart_id] = @cart.id
     end
   end
 
