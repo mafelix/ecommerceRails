@@ -19,7 +19,7 @@
                 <div class="caption text-center">
                   <h3><%=product.name.titleize%><%=product.id%></h3>
           <%end%>
-
+          <%=@cart.inspect%>
           <%= form_for @cart_item, remote: true do |f| %>
           <div>
             <div class="input-group">
