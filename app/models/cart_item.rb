@@ -9,6 +9,11 @@ class CartItem < ActiveRecord::Base
   validates :cart_id, uniqueness:{ :scope => :product_id, :message => "Product already added." }
 
   before_save :finalize
+  # a = CartItem.new; a.test_model test method for activerecord
+  
+  # def test_model
+  #   return "It works"
+  # end
 
   def unit_price
     if persisted?

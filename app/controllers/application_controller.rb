@@ -9,11 +9,38 @@ class ApplicationController < ActionController::Base
   protected
 
   def current_cart
-    if !session[:cart_id].nil?
+    @user = current_user
+    
+    # checking user to see if account is confirmed and verified
+    if @user.confirmed_at == true && @user.verified == true
+      
+      # checking if user already has cart in cart database
+      if Cart.find(user.id) == true
+        #establish Cart session cart for user 
+          Cart.find(session[:cart_id])
+      else
+        # create a new Cart Object for user
+        # assign current_user's id to cart object
+        cart = Cart.new
+        cart.user_id == @user.id
+        
+        # save it to get cart id
+        # assign session[:cart_id] == cart.id
+        cart.save
+        session[:cart_id] = cart.id
+      end
+    end
+
+
+    if session[:cart_id] != nil
       Cart.find(session[:cart_id])
     else
-      @cart = Cart.new
-      session[:cart_id] = @cart.id
+      
+
+      cart = Cart.new
+      
+
+      session[:cart_id] = cart.id
     end
   end
 

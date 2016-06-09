@@ -28,4 +28,5 @@ class User < ActiveRecord::Base
   validates_integrity_of :image_one, :image_two
   validates_processing_of :image_one, :image_two
 
+  
 end

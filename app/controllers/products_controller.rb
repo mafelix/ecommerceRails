@@ -4,6 +4,7 @@ before_filter :authenticate_user!
 
   def index
     @cart_item = current_cart.cart_items.new 
+    binding.pry
     # params[:search] from the header :search_bar
     if params[:search] == "" || params[:search].nil?
       @products = Product.all
@@ -14,8 +15,8 @@ before_filter :authenticate_user!
   end
 
   def show
+    @cart_item = current_cart.cart_items.new
     @product = Product.find(params[:id])
-    
   end
 
 end
