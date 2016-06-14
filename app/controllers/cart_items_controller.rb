@@ -4,24 +4,23 @@ class CartItemsController < ApplicationController
   #   @cart_items = CartItem.all
   #   respond_with(@cart_items)
   # end
-  
+
 
   def create
     @cart = current_cart
+    # session[:cart_id] = @cart.id
     @cart_item = @cart.cart_items.build(cart_item_params)
     @cart.save
-    session[:cart_id] = @cart.id
   end
 
   def update
-    
     @cart_cart_item = @cart.cart_items.find(params[:id])
     @cart_cart_item.update_attributes(cart_item_params)
     @cart_cart_items = @cart.cart_items
   end
 
   def destroy
-    
+
     @cart_cart_item = @cart.cart_items.find(params[:id])
     @cart_cart_item.destroy
     @cart_cart_items = @cart.cart_items

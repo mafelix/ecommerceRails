@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607221656) do
+ActiveRecord::Schema.define(version: 20160610062336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 20160607221656) do
   create_table "carts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_id"
+    t.integer  "users_id"
   end
 
-  add_index "carts", ["order_id"], name: "index_carts_on_order_id", using: :btree
+  add_index "carts", ["users_id"], name: "index_carts_on_users_id", using: :btree
 
   create_table "orders", force: true do |t|
     t.integer  "category"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20160607221656) do
     t.string   "image_two"
     t.string   "image_three"
     t.string   "image_four"
+    t.string   "unconfirmed_email"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

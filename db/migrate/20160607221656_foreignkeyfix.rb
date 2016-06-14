@@ -6,4 +6,5 @@ class Foreignkeyfix < ActiveRecord::Migration
     remove_reference :carts, :user, index:true, foreign_key: true
     add_reference :carts, :order, index: true, index: true
   end
+  
 end

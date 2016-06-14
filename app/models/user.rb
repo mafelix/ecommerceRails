@@ -21,12 +21,12 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :address, presence: true
   validates :postal_code, presence: true ,format: {with: canadian_postal_code}
-  
+
   # carrierwave validatioins
   validates :image_one, presence: true
   validates :image_two, presence: true
   validates_integrity_of :image_one, :image_two
   validates_processing_of :image_one, :image_two
 
-  
+
 end

@@ -2,28 +2,34 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :admin?, :restricted_access, :current_cart
+  helper_method :admin?, :restricted_access, :current_cart, :current_user
   # before_action :current_order
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
   def current_cart
+    # if user is logged in
     @user = current_user
-    
     # checking user to see if account is confirmed and verified
-    if @user.confirmed_at == true && @user.verified == true
-      
+    if @user.confirmed_at != nil && @user.verified == true
       # checking if user already has cart in cart database
-      if Cart.find(user.id) == true
-        #establish Cart session cart for user 
-          Cart.find(session[:cart_id])
+      if Cart.where(users_id: @user.id) != nil
+
+        # find a row in the database where users_id: equal to @user.id
+        cart = Cart.find_by(users_id: @user.id)
+        session[:cart_id] = cart.id
+        cart.save
+
+        #establish Cart session cart for user
+        Cart.find(session[:cart_id])
       else
+        
         # create a new Cart Object for user
         # assign current_user's id to cart object
         cart = Cart.new
-        cart.user_id == @user.id
-        
+        cart.users_id = @user.id
+
         # save it to get cart id
         # assign session[:cart_id] == cart.id
         cart.save
@@ -35,10 +41,10 @@ class ApplicationController < ActionController::Base
     if session[:cart_id] != nil
       Cart.find(session[:cart_id])
     else
-      
+
 
       cart = Cart.new
-      
+
 
       session[:cart_id] = cart.id
     end
