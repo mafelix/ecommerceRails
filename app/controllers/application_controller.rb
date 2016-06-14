@@ -15,38 +15,21 @@ class ApplicationController < ActionController::Base
     if @user.confirmed_at != nil && @user.verified == true
       # checking if user already has cart in cart database
       if Cart.where(users_id: @user.id) != nil
-
         # find a row in the database where users_id: equal to @user.id
+        # where clause does not work here
         cart = Cart.find_by(users_id: @user.id)
         session[:cart_id] = cart.id
         cart.save
-
         #establish Cart session cart for user
         Cart.find(session[:cart_id])
       else
-        
-        # create a new Cart Object for user
-        # assign current_user's id to cart object
+        # create a new Cart Object for user.assign current_user's id to cart object
         cart = Cart.new
         cart.users_id = @user.id
-
-        # save it to get cart id
-        # assign session[:cart_id] == cart.id
+        # save it to get cart id assign session[:cart_id] == cart.id
         cart.save
         session[:cart_id] = cart.id
       end
-    end
-
-
-    if session[:cart_id] != nil
-      Cart.find(session[:cart_id])
-    else
-
-
-      cart = Cart.new
-
-
-      session[:cart_id] = cart.id
     end
   end
 
