@@ -1,7 +1,9 @@
-class CartController < ApplicationController
+class CartsController < ApplicationController
 
   def show
-    @cart_items = current_order.cart_items
+    @cart = Cart.find(session[:cart_id]);
+    @cart_items = @cart.cart_items;
+    # @cart_items = current_cart.cart_items
   end
 
   def subtotal
@@ -13,7 +15,5 @@ class CartController < ApplicationController
   def update_subtotal
     self[:subtotal] = subtotal
   end
-end
 
-# cart_text item
-# ( {number_to_currency current_order.subtotal} )"
+end

@@ -1,1 +1,1 @@
-<%= link_to "#{current_cart.cart_items.size} Items in Cart", carts_path, class: "btn btn-link" %>
+<%= link_to "#{current_cart.cart_items.size} Items in Cart", cart_path(session[:cart_id]), class: "btn btn-link" %>
