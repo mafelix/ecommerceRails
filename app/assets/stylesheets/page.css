@@ -25,7 +25,7 @@ html, body{
   background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/02/Girls-with-Weed-Wallpaper.jpg");
   background-repeat : no-repeat;
   background-attachment: fixed;
-  
+
   /*background-position : center;*/
 }
 
@@ -49,11 +49,10 @@ img{
   position: relative;
   height: 195px;
   clear:both;
-  
+
   background-color: #e7e7e7;
 }
 margin-top: 10085;
-
 
 
 /*@font-face {

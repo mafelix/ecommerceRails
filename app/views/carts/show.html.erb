@@ -1,6 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @cart.user %>
+  <div class="container">
+    <strong>User:</strong>
+    <%= @cart.user %>
+    <%= @cart.id %>
+    <%= @cart_items %>
+    <%= @products %>
+    <%@cart.cart_items.each do |items|%>
+    <h2>
+      <%=image_tag(items.product.picture, :size=>"16x10")%>
+      <%=items.product.name%>
+      <%=items.product.price%>
+      <%=items.quantity%>
+      <%=items.product.price * items.quantity%>
+    </h2>
+
+    <%end%>
+
+  </div>
 </p>

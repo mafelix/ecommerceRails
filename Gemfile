@@ -9,7 +9,7 @@ gem 'pry'
 gem "font-awesome-rails"
 # carrierwave for user images
 gem 'carrierwave'
-# gem to support carrierwave
+# gem to support carrierwave resizing
 gem 'rmagick'
 # gem for pagination of products
 gem 'kaminari'
