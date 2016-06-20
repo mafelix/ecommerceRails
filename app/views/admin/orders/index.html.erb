@@ -7,14 +7,21 @@
       <th>Total</th>
       <th>Shipping Cost</th>
     </tr>
-    <% @orders.each do |order| %>
-    <tr>
-      <td><%=order.id%></td>
-      <td><%=order.users_id%></td>
-      <td><%=order.invoice_num%></td>
-      <td><%=order.total_cost%></td>
-      <td><%=order.shipping_cost%></td>
-      <td><%=order.cart_items%></td>
-    </tr>
+    <%if @orders != nil %>
+      <% @orders.each do |order| %>
+      <tr>
+        <td><%=order.id%></td>
+        <td><%=order.users_id%></td>
+        <td><%=order.invoice_num%></td>
+        <td><%=order.total_cost%></td>
+        <td><%=order.shipping_cost%></td>
+      </tr>
+      <%end%>
+    <%else%>
+    <div class="container">
+      <div class="text-center">
+          <h3>There is no orders here.</h3>
+      </div>
+    </div>
     <%end%>
   </table>

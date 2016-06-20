@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :admin?, :restricted_access, :current_cart, :current_user
-  # before_action :current_order
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -40,8 +39,8 @@ class ApplicationController < ActionController::Base
   # end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys:[:username, :first_name, :last_name, :address, :postal_code, :image_one, :image_two])
-    devise_parameter_sanitizer.permit(:account_update, keys:[:address, :postal_code, :image_one, :image_two])
+    devise_parameter_sanitizer.permit(:sign_up, keys:[:province, :username, :first_name, :last_name, :address, :postal_code, :image_one, :image_two])
+    devise_parameter_sanitizer.permit(:account_update, keys:[:province, :address, :postal_code, :image_one, :image_two])
   end
 
 

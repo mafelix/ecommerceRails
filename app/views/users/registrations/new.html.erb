@@ -1,38 +1,59 @@
 <h2 class="text-center">Sign up for your account</h2>
 <!-- <h1 class="text-center"> this is registerations/users/new.html.erb</h1> -->
 <div class="container">
-<%= form_for(@user, url: registration_path(@user), html: {:class => "form"}) do |f| %>
+<%= form_for(@user, url: registration_path(@user)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="form-group">
-    <%= f.label :username%>
-    <%= f.text_field :username, class: "form-control", autofocus: true%>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.label :username%>
+      <%= f.text_field :username, class: "form-control", autofocus: true%>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :email%>
-    <%= f.email_field :email, class: "form-control"%>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.label :email%>
+      <%= f.email_field :email, class: "form-control"%>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :password%>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length%> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, class: "form-control", autocomplete: "off"%>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off"%>
-  </div>
   <div class="form-group">
     <div class="row">
       <div class="col-sm-6">
+        <%= f.label :password%>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length%> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, class: "form-control", autocomplete: "off"%>
+`     </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off"%>
+      </div>
+    </div>
+  </div>
+
+  </br>
+  </br>
+  <div class="container signup-about"style="background-color: grey; font-size:20px;font-color: red;">
+    <p>
+      Please enter your information correctly below. We take utmost importance in keeping your information safe and confidential. Our services are provided to Canadian residents only.
+    </p>
+  </div>
+  </br>
+  </br>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-3">
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class: "form-control"%>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-3">
         <%= f.label :last_name %>
         <%= f.text_field :last_name, class: "form-control"%>
       </div>
@@ -41,28 +62,56 @@
 
   <div class="form-group">
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-6">
         <%= f.label :address %>
         <em>Please include your suite/apt number if avaliable.</em>
         <%= f.text_field :address, class: "form-control"%>
       </div>
-      <div class ="col-sm-4">
-        <%= f.label :postal_code %>
-        <em>For ex. A1A 1A1</em><br/>
-        <%= f.text_field :postal_code, class: "form-control"%>
+    </div>
+      <div class="row">
+        <div class ="col-sm-5">
+          <%= f.label :postal_code %>
+          <em>For ex. A1A 1A1</em><br/>
+          <%= f.text_field :postal_code, class: "form-control"%>
+        </div>
+      <div>
+        <%=f.label :province%><br/>
+        <%=f.select :province,
+        [["AB","Alberta"],
+	       ["BC","British Columbia"],
+	       ["MB","Manitoba"],
+	       ["NB","New Brunswick"],
+	       ["NL","Newfoundland/Labrador"],
+	       ["NS","Nova Scotia"],
+	       ["ON","Ontario"],
+      	 ["PE","Prince Edward Island"],
+      	 ["QC","Quebec"],
+      	 ["SK","Saskatchewan"],
+      	 ["NT","Northwest Territories"],
+      	 ["NU","Nunavut"],
+      	 ["YT","Yukon"]]%>
       </div>
     </div>
   </div>
 
+  <br />
+  <br />
+
+  <div class="container" style="background-color:grey; font-size: 20px">
+      <div class="identification-message-signup">
+        <p>
+          For you to use our service we must verify that you're of legal age in Canada. Please upload two government issue IDs. We do our best to keep your information safe and we do not distribute or resell such information.
+        </p>
+      </div>
+  </div>
   <div class="form-group">
     <%= f.label :image_one, "Two pieces please"%>
-      <%= f.file_field :image_one %>
-      <%= f.file_field :image_two %>
+      <%= f.file_field :image_one %><%= f.file_field :image_two %>
   </div>
 
 
   <div class="actions form-group">
-    <%= f.submit "Sign up", class: "btn btn-success" %>
+    <%= f.submit "Create my account", class: "btn btn-success" %>
   </div>
 <% end %>
 <%= render "users/shared/links" %>
