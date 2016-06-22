@@ -6,14 +6,14 @@
   <div class="row">
     <div class="col-sm-6">
       <%= f.label :username%>
-      <%= f.text_field :username, class: "form-control", autofocus: true%>
+      <%= f.text_field :username, class: "form-control", placeholder: "Enter a username",autofocus: true%>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-6">
       <%= f.label :email%>
-      <%= f.email_field :email, class: "form-control"%>
+      <%= f.email_field :email, class: "form-control", placeholder: "Please enter a valid email"%>
     </div>
   </div>
 
@@ -51,11 +51,11 @@
     <div class="row">
       <div class="col-sm-3">
         <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: "form-control"%>
+        <%= f.text_field :first_name, class: "form-control", placeholder: "Enter your first name"%>
       </div>
       <div class="col-sm-3">
         <%= f.label :last_name %>
-        <%= f.text_field :last_name, class: "form-control"%>
+        <%= f.text_field :last_name, class: "form-control", placeholder: "Enter your last name"%>
       </div>
     </div>
   </div>
@@ -65,14 +65,14 @@
       <div class="col-sm-6">
         <%= f.label :address %>
         <em>Please include your suite/apt number if avaliable.</em>
-        <%= f.text_field :address, class: "form-control"%>
+        <%= f.text_field :address, class: "form-control", placeholder: "Please enter a valid Canadian address. Ex: 234 Laurier Avenue West"%>
       </div>
     </div>
       <div class="row">
         <div class ="col-sm-5">
           <%= f.label :postal_code %>
           <em>For ex. A1A 1A1</em><br/>
-          <%= f.text_field :postal_code, class: "form-control"%>
+          <%= f.text_field :postal_code, class: "form-control", placeholder: "Please enter a valid Canadian postal code. Ex: K19 0G9"%>
         </div>
       <div>
         <%=f.label :province%><br/>
@@ -89,7 +89,7 @@
       	 ["SK","Saskatchewan"],
       	 ["NT","Northwest Territories"],
       	 ["NU","Nunavut"],
-      	 ["YT","Yukon"]]%>
+      	 ["YT","Yukon"]] %>
       </div>
     </div>
   </div>

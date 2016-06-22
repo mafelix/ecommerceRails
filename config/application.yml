@@ -9,6 +9,5 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-aws_access_key: AKIAIPDJ4VJB6CHQIXHQ 
-aws_access_secret_key: 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
-
+aws_access_key: AKIAI24IGRXZWZAXDZQQ
+aws_access_secret_key: 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
