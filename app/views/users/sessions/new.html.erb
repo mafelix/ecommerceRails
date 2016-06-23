@@ -1,4 +1,6 @@
 
+<div class="login-container">
+
 <h2>Log in</h2>
 
 <%= form_for(@user, as: resource_name, url: session_path(@user)) do |f| %>
@@ -25,3 +27,4 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+</div>

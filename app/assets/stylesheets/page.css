@@ -25,8 +25,7 @@ html, body{
   background-image: url("http://img0.ndsstatic.com/wallpapers/fd77ebf5ce2d7161ae06189cc8e2c787_large.jpeg");
   background-repeat : no-repeat;
   background-attachment: fixed;
-
-  background-position : center;
+  background-position : top;
 }
 
 `
@@ -52,9 +51,14 @@ img{
 
   background-color: #e7e7e7;
 }
-margin-top: 10085;
 
-
+/*media query for breakpoint on tablets and lower*/
+@media(max-width:767px){
+  /*login form is moved down when it hits tablet or lower breakpoint*/
+  .login-container{
+    padding-top:100px;
+  }
+}
 /*@font-face {
   font-family: 'Open Sans';
   font-weight: normal;
