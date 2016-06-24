@@ -1,7 +1,7 @@
-<h2 class="text-center">Sign up for your account</h2>
-<!-- <h1 class="text-center"> this is registerations/users/new.html.erb</h1> -->
+<h2 class="signup-form text-center">Sign up for your account</h2>
+
 <div class="container">
-<%= form_for(@user, url: registration_path(@user)) do |f| %>
+<%= form_for(@user, urlp: registration_path(@user)) do |f| %>
   <%= devise_error_messages! %>
   <div class="row">
     <div class="col-sm-6">
@@ -25,7 +25,7 @@
         <em>(<%= @minimum_password_length%> characters minimum)</em>
         <% end %><br />
         <%= f.password_field :password, class: "form-control", autocomplete: "off"%>
-`     </div>
+      </div>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
 
   </br>
   </br>
-  <div class="container signup-about"style="background-color: grey; font-size:20px;font-color: red;">
+  <div class="container signup-about"style="background-color: grey; font-size:20px;">
     <p>
       Please enter your information correctly below. We take utmost importance in keeping your information safe and confidential. Our services are provided to Canadian residents only.
     </p>
@@ -111,8 +111,12 @@
 
 
   <div class="actions form-group">
-    <%= f.submit "Create my account", class: "btn btn-success" %>
+    <%= f.submit "Create my account", class: "btn btn-success" %><h6>
+      By creating a new account, you are agreeing to accept our <a data-toggle="modal" data-target="#tosModal">Terms Of Service</a>.
+    </h4>
   </div>
 <% end %>
+</br>
+</br>
 <%= render "users/shared/links" %>
 </div>

@@ -5,7 +5,7 @@
 
     <%@cart.cart_items.each do |items|%>
 
-    <table>
+    <table class="cart-table">
       <!-- table head -->
       <thead>
         <tr>
@@ -18,7 +18,7 @@
       </thead>
       <!-- tabel body -->
       <tbody>
-      <tr>
+      <tr class="table-row">
         <td>
           <div class="col-sm-2">
             <%=image_tag(items.product.picture, :size=>"10x10", class: 'checkout-images')%>
@@ -54,7 +54,8 @@
 
 
 
-
-    <button type="submit">Submit your order</button>
+<div class="container align-right">
+  <button style:"position:relative; float:right;" type="submit">Submit your order</button>
+</div>
 
 </p>

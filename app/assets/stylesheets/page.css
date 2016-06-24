@@ -1,5 +1,5 @@
-html, body{
-  font-family: Helvetica, Arial, sans-serif;
+body{
+  font-family: Lucida Grande, Helvetica, Arial, sans-serif;
   background-color: sand;
   height:100%;
 /*  background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/02/Girls-with-Weed-Wallpaper.jpg");
@@ -7,10 +7,9 @@ html, body{
   background-attachment: fixed;
 *//*background-position: fixed;*/
 }
-.header{
-  background-color: black;
+.navbar-full{
+  background-color:#333333;
 }
-
 
 #main {
   overflow:auto;
@@ -51,6 +50,13 @@ img{
 
   background-color: #e7e7e7;
 }
+.cart-table{
+  width: 100%;
+}
+
+.table-row td{
+  min-width: 100px;
+}
 
 /*media query for breakpoint on tablets and lower*/
 @media(max-width:767px){
@@ -59,6 +65,12 @@ img{
     padding-top:100px;
   }
   .table-container{
+    padding-top:100px;
+  }
+  .signup-form{
+    padding-top:100px;
+  }
+  #productitems.container{
     padding-top:100px;
   }
 }
