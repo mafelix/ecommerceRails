@@ -47,36 +47,17 @@ img{
   position: relative;
   height: 195px;
   clear:both;
-
   background-color: #e7e7e7;
 }
-.cart-table{
-  width: 100%;
-}
 
-.table-row td{
-  min-width: 100px;
+.checkout-cart{
+  background-color: red;
+  font-size: 22px;
 }
-
 /*media query for breakpoint on tablets and lower*/
 @media(max-width:767px){
-  /*login form is moved down when it hits tablet or lower breakpoint*/
-  .login-container{
-    padding-top:100px;
-  }
-  .table-container{
-    padding-top:100px;
-  }
-  .signup-form{
-    padding-top:100px;
-  }
-  #productitems.container{
+  /*body is shifted down 100px due to navbar being enlarged in mobile devices/tablets*/
+  body{
     padding-top:100px;
   }
 }
-/*@font-face {
-  font-family: 'Open Sans';
-  font-weight: normal;
-  font-style: normal;
-  src: font-url('OpenSans-Regular.tff');
-}*/

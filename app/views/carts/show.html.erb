@@ -1,61 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <div class="container text-center table-container" style:"background-color: grey;">
 
-    <%@cart.cart_items.each do |items|%>
+<%=render 'test'%>
+<%=render 'cart_row'%>
 
-    <table class="cart-table">
-      <!-- table head -->
-      <thead>
-        <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total Price</th>
-        </tr>
-      </thead>
-      <!-- tabel body -->
-      <tbody>
-      <tr class="table-row">
-        <td>
-          <div class="col-sm-2">
-            <%=image_tag(items.product.picture, :size=>"10x10", class: 'checkout-images')%>
-          </div>
-        </td>
-        <td>
-          <div class="col-sm-2">
-            <%=items.product.name%>
-          </div>
-        </td>
-        <td>
-          <div class="col-sm-2">
-            <%=items.product.price%>
-          </div>
-        </td>
-        <td>
-          <div class="col-sm-2">
-            <%=items.quantity%>
-          </div>
-        </td>
-        <td>
-          <div class="col-sm-2">
-            <%=items.product.price * items.quantity%>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-
-  </table>
-<%end%>
-</div>
-
-
-
+</br>
+</br>
 
 <div class="container align-right">
   <button style:"position:relative; float:right;" type="submit">Submit your order</button>
 </div>
+
+
 
 </p>

@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  helper_method :subtotal
 
   def show
     @cart = Cart.find(session[:cart_id]);
@@ -11,10 +12,10 @@ class CartsController < ApplicationController
     cart_items.collect {|cart_items| cart_items.valid? ? (cart_items.quantity * cart_items.unit_price) : 0}.sum
   end
 
+
   private
 
   def update_subtotal
     self[:subtotal] = subtotal
   end
-
 end

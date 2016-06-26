@@ -1,0 +1,36 @@
+<h1>Shopping Cart</h1>
+<%@cart.cart_items.each do |item|%>
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+  <div class="product">
+    <div class="product-image">
+      <%=image_tag(item.product.picture)%>
+    </div>
+    <div class="product-details">
+      <div class="product-title"><%=item.product.name%></div>
+      <p class="product-description"><%=item.product.description%></p>
+    </div>
+    <div class="product-price"><%=number_to_currency(item.product.price)%></div>
+    <div class="product-quantity">
+      <input type="number" value="2" min="1">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product">
+        Remove
+      </button>
+    </div>
+    <div class="product-line-price"><%=item.product.price*item.quantity%></div>
+  </div>
+
+
+</div>
+<%end%>
