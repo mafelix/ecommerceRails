@@ -8,6 +8,14 @@ class CartsController < ApplicationController
     # @cart_items = current_cart.cart_items
   end
 
+  def submit
+    # initializing current cart
+    @cart = current_cart
+    @cart_items = @cart.cart_items;
+    @products = @cart_items.product;
+
+  end
+
   def subtotal
     cart_items.collect {|cart_items| cart_items.valid? ? (cart_items.quantity * cart_items.unit_price) : 0}.sum
   end
