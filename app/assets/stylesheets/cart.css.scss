@@ -20,8 +20,9 @@ $font-bold: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
 .product-details { float: left; width: 37%; }
 .product-price { float: left; width: 12%; }
 .product-quantity { float: left; width: 10%; }
+.product-update { float: left; width: 1%; }
 .product-removal { float: left; width: 9%; }
-.product-line-price { float: left; width: 12%; text-align: right; }
+.product-line-price { float: left; width: 10%; text-align: right; }
 
 
 /* This is used as the traditional .clearfix class */
@@ -45,9 +46,9 @@ $font-bold: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
 
 
 /* Apply dollar signs */
-.product .product-price:before, .product .product-line-price:before, .totals-value:before {
-  content: '$';
-}
+// .product .product-price:before, .product .product-line-price:before, .totals-value:before {
+//   content: '$';
+// }
 
 
 /* Body/Header stuff */
@@ -78,7 +79,7 @@ label {
     border-bottom: 1px solid $color-border;
   }
 
-  .product-image, .product-details, .product-removal {
+  .product-image, .product-details, .product-removal, .product-update{
     text-indent: -9999px;
   }
 }
@@ -128,6 +129,19 @@ label {
 
   .remove-product:hover {
     background-color: #a44;
+  }
+  .update-product{
+    border: 0;
+    padding: 4px 8px;
+    float:right;
+    background-color: #09ca7a;
+    color: #fff;
+    font-family: $font-bold;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  .update-product:hover{
+    background-color: #3ea279;
   }
 }
 
