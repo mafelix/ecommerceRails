@@ -1,7 +1,7 @@
 class CartItem < ActiveRecord::Base
   belongs_to :cart
   belongs_to :product
-  
+
 
   validates :quantity, presence: true, numericality: {only_integer: true, greater_than: 0}
   # validate :product_present
@@ -10,7 +10,7 @@ class CartItem < ActiveRecord::Base
 
   before_save :finalize
   # a = CartItem.new; a.test_model test method for activerecord
-  
+
   # def test_model
   #   return "It works"
   # end
@@ -26,6 +26,7 @@ class CartItem < ActiveRecord::Base
   def total_price
     unit_price * quantity
   end
+
 
   private
 

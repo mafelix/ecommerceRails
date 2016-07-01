@@ -1,5 +1,5 @@
 <% if @cart.errors.any? || @cart_item.errors.any? %>
-  alert("Not valid.");
+  alert("Item is already in your cart!.");
 <%else%>
   $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text')%>")
 <%end%>

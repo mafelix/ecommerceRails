@@ -2,18 +2,10 @@ class CartsController < ApplicationController
   helper_method :subtotal
 
   def show
+    # application controller method to find shopping cart
     @cart = current_cart
-    @cart_items = @cart.cart_items;
+    @cart_items = @cart.cart_items.order(:id);
     @products = @cart_items.product;
-    # @cart_items = current_cart.cart_items
-  end
-
-  def submit
-    # initializing current cart
-    @cart = current_cart
-    @cart_items = @cart.cart_items;
-    @products = @cart_items.product;
-
   end
 
   def subtotal

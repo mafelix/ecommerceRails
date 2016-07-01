@@ -4,8 +4,9 @@ class CartItemsController < ApplicationController
   #   @cart_items = CartItem.all
   #   respond_with(@cart_items)
   # end
-
+# scope for most_recent and subtotal
 # find out if rails sorts on update column cuz this is annoying.
+
 
   def create
     # grabbing cart from application controller current_cart method
@@ -30,7 +31,7 @@ class CartItemsController < ApplicationController
     @cart = current_cart
     @cart_item = @cart.cart_items.find(params[:id])
     @cart_item.destroy
-    # @cart_cart_items = @cart.cart_items
+    @cart_items = @cart.cart_items
   end
 
   private
