@@ -20,7 +20,9 @@ $font-bold: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
 .product-details { float: left; width: 37%; }
 .product-price { float: left; width: 12%; }
 .product-quantity { float: left; width: 10%; }
-.product-update { float: left; width: 1%; }
+
+// own label for update
+.product-update { float:left; width:1% }
 .product-removal { float: left; width: 9%; }
 .product-line-price { float: left; width: 10%; text-align: right; }
 
@@ -130,18 +132,21 @@ label {
   .remove-product:hover {
     background-color: #a44;
   }
+  // own button for update
   .update-product{
-    border: 0;
+    outline: none;
+    color:white;
+    border:0;
     padding: 4px 8px;
-    float:right;
-    background-color: #09ca7a;
-    color: #fff;
+    background-color: #4CAF50;
     font-family: $font-bold;
     font-size: 12px;
     border-radius: 3px;
+    float: right;
   }
   .update-product:hover{
-    background-color: #3ea279;
+    background-color: #006400;
+
   }
 }
 
