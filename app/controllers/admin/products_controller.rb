@@ -32,10 +32,10 @@ before_filter :restricted_access
     @product = Product.find(params[:id])
 
     if @product.update_attributes(admin_product_params)
-      flash[:alert] = "<%=@product.name%> successfully saved."
+      flash[:alert] = "<%=@product.name}%> successfully saved."
       redirect_to admin_products_path
     # else
-    #   render 
+    #   render
     end
   end
 
