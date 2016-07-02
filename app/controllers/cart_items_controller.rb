@@ -1,9 +1,5 @@
 class CartItemsController < ApplicationController
   before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
-  # def index
-  #   @cart_items = CartItem.all
-  #   respond_with(@cart_items)
-  # end
 # scope for most_recent and subtotal
 # find out if rails sorts on update column cuz this is annoying.
 

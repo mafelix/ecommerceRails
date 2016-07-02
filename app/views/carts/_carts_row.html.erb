@@ -38,20 +38,13 @@
       <div class="product-quantity">
         <%=f.number_field :quantity, value: item.quantity, min: 1, max: 8%>
         <%=f.hidden_field :product_id, value: item.product.id%>
-        <!-- <input type="number" value="<%=item.quantity%>" min="1" max="8"> -->
       </div>
       <div class="product-update">
         <%=f.submit 'Update', class: "update-product"%>
-        <!-- <%=f.hidden_field :product_id, value: item.product.id%> -->
-        <!-- <button class="update-product">
-          Update
-        </button> -->
       </div>
       <div class="product-removal">
-        <%= link_to "Remove", item, {data: {confirm: "Are you sure you wish to delete the product '#{item.product.name}' from your cart?"}, method: :delete, remote: true, class: "remove-product"}%>
-        <!-- <button class="remove-product">
-          Remove
-        </button> -->
+        <%= button_to "Remove", item, {data: {confirm: "Are you sure you wish to remove '#{item.product.name}' from your cart?"}, method: :delete, remote: true, class: "remove-product"}%>
+        <!-- <%= link_to "Remove", item, {data: {confirm: "Are you sure you wish to delete the product '#{item.product.name}' from your cart?"}, method: :delete, remote: true, class: "remove-product"}%> -->
         <%end%>
       </div>
       <div class="product-line-price"><%=number_to_currency(item.product.price*item.quantity)%></div>
