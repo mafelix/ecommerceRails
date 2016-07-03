@@ -1,5 +1,5 @@
 
-<!-- need to add responsive image for mobile friendly individual product show -->  
+<!-- need to add responsive image for mobile friendly individual product show -->
 <!-- <div class="container-fluid"> -->
 <div class="row">
   <div class="col-xs-12 col-md-7 text-center">
@@ -7,8 +7,9 @@
     <%= form_for @cart_item, remote: true do |f| %>
     <div>
       <div class="input-group">
-        <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+        <%= f.number_field :quantity, value: 1, class: "form-control", min: 1, max: 8 %>
         <div class="input-group-btn">
+          <%= f.hidden_field :product_id, value: @product.id%>
           <%= f.submit "Add to Cart", class: "btn btn-primary"%>
         </div>
       </div>
@@ -16,7 +17,7 @@
     <%end%>
   </div>
   <div class="col-xs-12 col-md-5 text-left  ">
-    <div class="product-text" >  
+    <div class="product-text" >
 
       <div class="product-title">
         <h1><u><%=@product.name.titleize%><%=@product.id%></u> | <%=number_to_currency(@product.price)%></h1>
@@ -28,4 +29,3 @@
     </div>
   </div>
 </div>
-

@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  mount_uploader :picture, ProductImageUploader
   has_many :reviews
   has_many :cart_items
 
