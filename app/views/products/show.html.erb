@@ -3,7 +3,7 @@
 <!-- <div class="container-fluid"> -->
 <div class="row">
   <div class="col-xs-12 col-md-7 text-center">
-    <img class="img-responsive" src="<%=@product.picture%>">
+    <img class="img-responsive show-image" src="<%=@product.picture%>">
     <%= form_for @cart_item, remote: true do |f| %>
     <div>
       <div class="input-group">
