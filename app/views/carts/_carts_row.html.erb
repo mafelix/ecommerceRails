@@ -45,10 +45,9 @@
       <div class="product-update">
         <%=f.submit 'Update', class: "update-product"%>
       </div>
+      <%end%>
       <div class="product-removal">
         <%= button_to "Remove", item, {data: {confirm: "Are you sure you wish to remove '#{item.product.name}' from your cart?"}, method: :delete, remote: true, class: "remove-product"}%>
-        <!-- <%= link_to "Remove", item, {data: {confirm: "Are you sure you wish to delete the product '#{item.product.name}' from your cart?"}, method: :delete, remote: true, class: "remove-product"}%> -->
-        <%end%>
       </div>
       <div class="product-line-price"><%=number_to_currency(item.product.price*item.quantity)%></div>
     </div>
