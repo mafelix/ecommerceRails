@@ -82,8 +82,35 @@
     </div></div>
   </div>
 </div>
+<!-- <div class="container">
+  <div class="row">
+      <div class="col-md-6">
+        <%=@user.address %><%= Time.zone.now.strftime("%d/%m/%Y %H%M") %>
+      </div>
+  </div>
+</div> -->
 <div class="checkout-btn">
-  <button class="checkout">Checkout</button>
+  <button class="checkout" data-toggle="modal" data-target="#checkout-modal">Checkout</button>
 </div>
+
+<div class="modal fade" id="checkout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Checkout Summary</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          <%=Faker::Lorem.paragraph(15)%>
+        </p>
+      </div>
+      <div class="modal-footer">
+        Copyright Platinum Herbal Society
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 <%end%>
