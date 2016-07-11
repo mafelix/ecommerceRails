@@ -21,6 +21,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
     path = ::File.expand_path(store_dir, root)
     Dir.delete(path)
   end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
