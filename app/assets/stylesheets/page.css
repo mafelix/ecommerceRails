@@ -54,6 +54,13 @@ img{
   background-color: red;
   font-size: 22px;
 }
+#flash-notice{
+  color: green;
+  position: absolute;
+  background-color: white;
+  border-radius:5px;
+  top:100px;
+}
 /*media query for breakpoint on tablets and lower*/
 @media(max-width:767px){
   /*body is shifted down 100px due to navbar being enlarged in mobile devices/tablets*/
