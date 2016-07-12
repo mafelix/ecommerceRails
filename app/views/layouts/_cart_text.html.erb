@@ -1,3 +1,3 @@
 <%if current_user %>
-  <%= link_to "#{current_cart.cart_items.size} Items in Cart ( #{number_to_currency current_cart.cart_items.collect {|item| item.quantity*item.unit_price}.sum} )", cart_path(session[:cart_id]), class: "btn btn-link" %>
+  <%= link_to "#{current_cart.cart_items.size} Items in Cart ( #{number_to_currency current_cart.cart_items.collect {|item| item.quantity*item.unit_price}.sum} )", cart_path(session[:cart_id]), class: "fa fa-shopping-cart btn btn-link" %>
 <%end%>
