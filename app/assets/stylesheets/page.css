@@ -62,7 +62,10 @@ img{
   position: relative;
   background-color: red;
   width: 50vw;
-
+}
+#shopping-cart{
+  font-size:20px;
+  color: white;
 }
 /*media query for breakpoint on tablets and lower*/
 @media(max-width:767px){
