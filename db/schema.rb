@@ -80,13 +80,16 @@ ActiveRecord::Schema.define(version: 20160620020615) do
     t.string   "username"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "email"
     t.boolean  "verified"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "firstname"
+    t.string   "lastname"
     t.text     "address"
     t.string   "postal_code"
     t.boolean  "admin"
-    t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

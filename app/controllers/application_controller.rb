@@ -8,16 +8,16 @@ class ApplicationController < ActionController::Base
   protected
   def submit_cart
     @order = Order.new
-    
   end
 
   def current_cart
     # if user is logged in
     @user = current_user
     # checking user to see if account is confirmed and verified
-    if @user.confirmed_at != nil && @user.verified == true
+    if @user.confirmed_at != nil
+      # && @user.verified == true <- maybe don't check for verified until checkout
       # checking if user already has cart in cart database
-      if Cart.where(users_id: @user.id) != nil
+      if Cart.find_by(users_id: @user.id) != nil
         # find a row in the database where users_id: equal to @user.id
         # where clause does not work here
         cart = Cart.find_by(users_id: @user.id)
@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
   # end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys:[:province, :username, :first_name, :last_name, :address, :postal_code, :image_one, :image_two])
+    devise_parameter_sanitizer.permit(:sign_up, keys:[:province, :password, :username, :first_name, :last_name, :address, :postal_code, :image_one, :image_two])
     devise_parameter_sanitizer.permit(:account_update, keys:[:province, :address, :postal_code, :image_one, :image_two])
   end
 

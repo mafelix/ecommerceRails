@@ -1,6 +1,7 @@
 class PageController < ApplicationController
+before_action :current_cart
   def index
-    @products = Product.last(4)
+    @products = Product.all
   end
 
 end

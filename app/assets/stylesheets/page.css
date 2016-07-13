@@ -2,6 +2,7 @@ body{
   font-family: Lucida Grande, Helvetica, Arial, sans-serif;
   background-color: sand;
   height:100%;
+  margin-left:-18px;
 /*  background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/02/Girls-with-Weed-Wallpaper.jpg");
   background-repeat : no-repeat;
   background-attachment: fixed;
@@ -21,6 +22,7 @@ body{
   padding-top: 30vh;
   padding-bottom: 100px;
   height:100vh;
+  width: 100vw;
   background-image: url("http://img0.ndsstatic.com/wallpapers/fd77ebf5ce2d7161ae06189cc8e2c787_large.jpeg");
   background-repeat : no-repeat;
   background-attachment: fixed;
@@ -46,6 +48,7 @@ img{
   margin-top: 185px;
   position: relative;
   height: 195px;
+  width: 100vw;
   clear:both;
   background-color: #e7e7e7;
 }
@@ -55,11 +58,11 @@ img{
   font-size: 22px;
 }
 #flash-notice{
-  color: green;
-  position: absolute;
-  background-color: white;
-  border-radius:5px;
-  top:100px;
+  color: black;
+  position: relative;
+  background-color: red;
+  width: 50vw;
+
 }
 /*media query for breakpoint on tablets and lower*/
 @media(max-width:767px){
