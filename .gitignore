@@ -28,4 +28,4 @@
 /config/application.yml
 
 # Ignore public product uploads
-/public/uploads/product/*.*
+/public/uploads/
