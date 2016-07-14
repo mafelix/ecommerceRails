@@ -17,7 +17,7 @@
               <div class="thumbnail">
                <%=image_tag(product.picture)%>
                 <div class="caption text-center">
-                  <h3><%=product.name.titleize%><%=product.id%></h3>
+                  <h3><%=product.name.titleize%></h3>
           <%end%>
 
          <%= form_for @cart_item, remote: true do |f| %>
