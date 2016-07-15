@@ -51,8 +51,9 @@
       </div>
       <div class="product-line-price"><%=number_to_currency(item.product.price*item.quantity)%></div>
     </div>
+
   <%end%>
-  <%end%>
+<%end%>
 <br />
 <br />
 
@@ -82,13 +83,8 @@
     </div></div>
   </div>
 </div>
-<!-- <div class="container">
-  <div class="row">
-      <div class="col-md-6">
-        <%=@user.address %><%= Time.zone.now.strftime("%d/%m/%Y %H%M") %>
-      </div>
-  </div>
-</div> -->
+<!--end shopping cart -->
+
 <div class="checkout-btn">
   <button class="checkout" data-toggle="modal" data-target="#checkout-modal">Checkout</button>
 </div>
@@ -103,29 +99,29 @@
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <p class="col-md-2 col-sm-1">
+            <p class="col-md-2 col-xs-3 col-md-offset-0">
               <u>Product Name</u>
             </p>
 
-            <p class="col-md-2 col-sm-1">
+            <p class="col-md-2 col-xs-1 col-md-offset-0 col-xs-offset-2">
               <u>Price</u>
             </p>
-            <p class="col-md-2 col-sm-1">
+            <p class="col-md-2 col-xs-1 col-md-offset-0 col-xs-offset-2">
               <u>Quantity</u>
             </p>
           </div>
         <%@cart_items.each do |item|%>
 
         <div class="row">
-          <div class="col-md-2 col-sm-1">
+          <div class="col-md-2 col-xs-3 col-md-offset-0">
           <p>
             <%=item.product.name%>
           </p>
           </div>
-          <div class="col-md-2 col-sm-1">
+          <div class="col-md-2 col-xs-1 col-md-offset-0 col-xs-offset-2">
             <%=number_to_currency(item.product.price)%>
           </div>
-          <div class="col-md-2 col-sm-1">
+          <div class="col-md-2 col-xs-1 col-md-offset-0 col-xs-offset-2">
             <p><%=item.quantity%></p>
           </div>
         </div>
@@ -137,11 +133,11 @@
 
           <div class="row totals">
             <!--subtotalrow  -->
-            <div class="col-md-2"style="font-weight:bold;">
+            <div class="col-md-2 col-xs-2"style="font-weight:bold;">
               <bold><u>Subtotal:</u></bold>
             </div>
 
-            <div class="col-md-2 col-md-offset-1">
+            <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-2">
               <p>
                 <%=number_to_currency(subtotal)%>
               </p>
@@ -149,11 +145,11 @@
           </div>
           <!--shippingrow  -->
           <div class="row">
-            <div class="col-md-2"style="font-weight:bold;">
+            <div class="col-md-2 col-xs-2"style="font-weight:bold;">
               <bold><u>Shipping:</u></bold>
             </div>
 
-            <div class="col-md-2 col-md-offset-1">
+            <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-2">
               <p>
                 <%=number_to_currency(15)%>
               </p>
@@ -161,11 +157,11 @@
           </div>
           <!--grandtotal row  -->
           <div class="row">
-            <div class="col-md-2"style="font-weight:bold;">
+            <div class="col-md-2 col-xs-2"style="font-weight:bold;">
               <bol><u>Grand Total</u></bold>
             </div>
 
-            <div class="col-md-2 col-md-offset-1">
+            <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-2">
               <p>
                 <%=number_to_currency(subtotal+15)%>
               </p>
@@ -191,20 +187,26 @@
           <div class="row">
             <div class="col-md-5">
               <p>
-                <%=@user.address%>
-                <%=@user.postal_code%>
+                Your address:<%=@user.address%>
+              </p>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-5">
+              <p>
+                Your postal code:<%=@user.postal_code%>
               </p>
             </div>
           </div>
         </div>
 
-      </div>
       <div class="modal-footer">
         Copyright Platinum Herbal Society©
       </div>
     </div>
+    </div>
   </div>
-</div>
 
-</div>
+
 <%end%>

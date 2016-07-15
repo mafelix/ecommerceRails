@@ -252,10 +252,22 @@ label {
   }
 
 }
+// ipad media query
+@media screen and (max-width: 1024px){
+  .product-details{
+    padding-left:75px;
+  }
+}
 
-
+// getting rid of padding left for ipad after phone width
+@media screen and (max-width: 650px){
+  .product-details{
+    padding-left:0px;
+  }
+}
 /* Make more adjustments for phone */
 @media screen and (max-width: 350px) {
+
 
   .product-removal {
     float: right;
@@ -268,9 +280,6 @@ label {
     margin-top: 10px;
   }
 
-  // .product .product-line-price:before {
-  //   content: 'Item Total: $';
-  // }
 
   .totals {
     .totals-item {
