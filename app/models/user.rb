@@ -28,5 +28,8 @@ class User < ActiveRecord::Base
   validates_integrity_of :image_one, :image_two
   validates_processing_of :image_one, :image_two
 
-
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+  
 end

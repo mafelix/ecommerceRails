@@ -177,28 +177,49 @@
             <div class="col-md-6">
 
               <p>
-                Please ensure your order and shipping address are correct. Ordering means you accept all terms of service. Once you submit your order, you will recieve an email with instructions on how to pay. We appreciate your business. Your product will arrive in 3-5 business days.
+                Please ensure your order and shipping address are correct. Ordering means you accept all terms of service. Once you submit your order, you will recieve an email with instructions on how to pay. We appreciate your business. Your product will arrive in 3-5 business days on confirmation of payment.
               </p>
             </div>
           </div>
         </div>
+
+        <br />
+        <br />
         <!--user address information -->
-        <div class="container modal-cart-userinfo">
+        <div class="container-fluid modal-cart-userinfo">
+          <div class="row text-center">
+            <h4>Your Shipping Information:</h4>
+          </div>
           <div class="row">
-            <div class="col-md-5">
-              <p>
-                Your address:<%=@user.address%>
-              </p>
+            <div class="col-md-12">
+              Name:<%=@user.full_name%>
             </div>
           </div>
           <br />
+
+
           <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-12">
               <p>
-                Your postal code:<%=@user.postal_code%>
+                Address: <%=@user.address%>
+              </p>
+            </div>
+            <div class="col-md-12">
+              <p>
+                Province: <%=@user.province%>
+              </p>
+            </div>
+            <div class="col-md-12">
+              <p>
+                Postal code: <%=@user.postal_code%>
               </p>
             </div>
           </div>
+
+          <br />
+          <p>
+            <%=@user.full_name%> is your shipping information correct? If it isn't you can edit your information <%=link_to 'here', edit_user_registration_path(@user)%>
+          </p>
         </div>
 
       <div class="modal-footer">

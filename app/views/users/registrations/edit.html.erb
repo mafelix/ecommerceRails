@@ -18,6 +18,24 @@
     <%=f.text_field :postal_code%> <em>Same with your new postal code</em><br />
   </div>
 
+  <div>
+    <%=f.label :province%><br/>
+    <%=f.select :province,
+    [["AB","Alberta"],
+    ["BC","British Columbia"],
+    ["MB","Manitoba"],
+    ["NB","New Brunswick"],
+    ["NL","Newfoundland/Labrador"],
+    ["NS","Nova Scotia"],
+    ["ON","Ontario"],
+    ["PE","Prince Edward Island"],
+    ["QC","Quebec"],
+    ["SK","Saskatchewan"],
+    ["NT","Northwest Territories"],
+    ["NU","Nunavut"],
+    ["YT","Yukon"]] %>
+  </div>
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -40,6 +58,7 @@
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
+
 <% end %>
 
 <h3>Cancel my account</h3>

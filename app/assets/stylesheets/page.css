@@ -67,6 +67,11 @@ img{
   font-size:20px;
   color: white;
 }
+/*User information on modal checkout summary*/
+.modal-cart-userinfo{
+  background-color: #E7E7E7;
+  width: 85%;
+}
 /*media query for breakpoint on tablets and lower*/
 @media(max-width:767px){
   /*body is shifted down 100px due to navbar being enlarged in mobile devices/tablets*/
