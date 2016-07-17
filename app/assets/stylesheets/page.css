@@ -3,10 +3,6 @@ body{
   background-color: sand;
   height:100%;
   margin-left:-18px;
-/*  background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/02/Girls-with-Weed-Wallpaper.jpg");
-  background-repeat : no-repeat;
-  background-attachment: fixed;
-*//*background-position: fixed;*/
 }
 .navbar-full{
   background-color:#333333;
@@ -59,13 +55,15 @@ img{
 }
 #flash-notice{
   color: black;
-  position: relative;
   background-color: red;
-  width: 50vw;
+  width: 100vw;
 }
 #shopping-cart{
   font-size:20px;
   color: white;
+}
+#btn-modal{
+  margin-top:0px;
 }
 /*User information on modal checkout summary*/
 .modal-cart-userinfo{
