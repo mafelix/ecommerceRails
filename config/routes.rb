@@ -1,7 +1,8 @@
   Rails.application.routes.draw do
   devise_for :users
   # ,  :path => "admin"
-  resources :carts, only: [:show, :submit]
+  resources :orders, only: [:index, :new, :create, :show]
+  resources :carts, only: [:show]
 
   resources :cart_items, only: [:create, :update, :destroy]
 
