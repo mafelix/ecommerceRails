@@ -1,8 +1,8 @@
 class CartItem < ActiveRecord::Base
   belongs_to :cart
   belongs_to :product
+  belongs_to :order
 
-  
   validates :quantity, presence: true, numericality: {only_integer: true, greater_than: 0}
   # validate :product_present
   validate :cart_present
@@ -27,6 +27,9 @@ class CartItem < ActiveRecord::Base
     unit_price * quantity
   end
 
+  def sub_total
+    current_cart.cart_items.collect {|item| item.valid? item.quantity * item.unit_price}.sum
+  end
 
   private
 

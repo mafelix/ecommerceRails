@@ -6,9 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
-  def submit_cart
-    @order = Order.new
-  end
+
 
   def current_cart
     # if user is logged in

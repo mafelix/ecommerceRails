@@ -2,7 +2,13 @@ class OrdersController<ApplicationController
 
 
   def new
-    @order = Order.new(order_params)
+    @order = Order.new
+    @order.users_id = current_cart.users_id
+    if @order
+      @order.save
+    else
+      redirect_to 'cart_show_path'
+    end
   end
 
   def index
