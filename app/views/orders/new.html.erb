@@ -1,8 +1,29 @@
 <h1 class="text-center"> Order Submitted!</h1>
 
+<!-- <%=@order.inspect%> -->
+this is order inspect:
 <%=@order.inspect%>
-<%=@order.cart_items.inspect%>
-<%=@order.cart_items.product.inspect%>
+<br />
+<br />
+this is the current_cart:<%=current_cart.inspect%>
+<br />
+<br />
+this is order.cart_items:<%=@order.cart_items.inspect%>
+<br />
+<br />
+this is order.cart_items.each do :<%@order.cart_items.each do |item| %>
+<%= item %>
+<% end %>
+<br />
+<br />
+this is current_cart.cart_items: <%= current_cart.cart_items.inspect%>
+<br/>
+this is current_cart.cart_items.each do: <% current_cart.cart_items.each do |item| %>
+<br/>
+
+<%= item.inspect %>
+<% end %>
+<!-- <%=@order.cart_items.product.inspect%> -->
 
 <div class="container email-container" style="background-color: grey; font-size:25px; line-height:43px;">
   <p>

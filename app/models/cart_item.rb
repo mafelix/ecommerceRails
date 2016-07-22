@@ -6,7 +6,9 @@ class CartItem < ActiveRecord::Base
   validates :quantity, presence: true, numericality: {only_integer: true, greater_than: 0}
   # validate :product_present
   validate :cart_present
-  validates :cart_id, uniqueness:{ :scope => :product_id, :message => "Product already added." }
+  # need a new validation that doesn't mess up the product_id scope validations
+  # was interfering with setting cart_item.cart_id = nil
+# validates :cart_id, uniqueness:{ :scope => :product_id, :message => "Product already added." }
 
   before_save :finalize
   # a = CartItem.new; a.test_model test method for activerecord
@@ -14,11 +16,14 @@ class CartItem < ActiveRecord::Base
   # def test_model
   #   return "It works"
   # end
-  def empty_cart
-    current_cart.cart_items.each do |item|
-      item.destroy
-    end
-  end
+  # def empty_cart
+  #   current_cart.cart_items.each do |item|
+  #     puts item
+  #     item.cart_id = nil
+  #     puts item
+  #   end
+  # end
+
   def unit_price
     if persisted?
       self[:unit_price]
