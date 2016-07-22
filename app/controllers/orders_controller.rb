@@ -11,13 +11,17 @@ before_action :cart_empty?
       item.save!
     end
 
-    @order.save
-
-    current_cart.cart_items.each do |item|
-      item.cart_id = nil
-      item.save!
+    if @order.save
+      current_cart.cart_items.each do |item|
+        item.cart_id = nil
+        item.save!
+      end
+      # destroying the cart and initializing a new cart for the user through application_controller method. could be optional.
+      # current_cart.destroy
+      # current_cart
+    else
+      redirect cart_show_path(@user.id)
     end
-
     # if @order.save
     #   current_cart.cart_items.each do |item|
     #     item.cart_id = nil
