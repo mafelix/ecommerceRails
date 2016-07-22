@@ -21,6 +21,7 @@ class CartItemsController < ApplicationController
     @cart_item.update_attributes(cart_item_params)
     @cart_items = @cart.cart_items.order(:id)
     # redirect 'cart_show_path'
+    @cart.save
   end
 
   def destroy
@@ -28,6 +29,7 @@ class CartItemsController < ApplicationController
     @cart_item = @cart.cart_items.find(params[:id])
     @cart_item.destroy
     @cart_items = @cart.cart_items
+    @cart.save
   end
 
   private

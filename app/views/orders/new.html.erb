@@ -1,1 +1,11 @@
-<h1> this is the new.html.erb in orders/view</h1>
+<h1 class="text-center"> Order Submitted!</h1>
+
+<%=@order.inspect%>
+<%=@order.cart_items.inspect%>
+<%=@order.cart_items.product.inspect%>
+
+<div class="container email-container" style="background-color: grey; font-size:25px; line-height:43px;">
+  <p>
+      Thank you for placing your order. You will recieve instructions in your email(<%=@user.email%>) on the payment process. After confirmation of payment please allow 3-5 business days for your product to arrive.
+  </p>
+</div>

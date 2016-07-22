@@ -14,7 +14,11 @@ class CartItem < ActiveRecord::Base
   # def test_model
   #   return "It works"
   # end
-
+  def empty_cart
+    current_cart.cart_items.each do |item|
+      item.destroy
+    end
+  end
   def unit_price
     if persisted?
       self[:unit_price]
