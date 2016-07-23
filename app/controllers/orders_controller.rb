@@ -4,7 +4,9 @@ before_action :cart_empty?
   def new
     @order = Order.create!(users_id: current_cart.users_id)
     @user = User.find(@order.users_id)
+
     @order.shipping_cost = 15
+    @order.invoice_num = @order.id
 
     current_cart.cart_items.each do |item|
       item.order_id = @order.id
@@ -19,40 +21,10 @@ before_action :cart_empty?
       # destroying the cart and initializing a new cart for the user through application_controller method. could be optional.
       # current_cart.destroy
       # current_cart
+      OrderMailer.invoice_email(@user, @order)
     else
       redirect cart_show_path(@user.id)
     end
-    # if @order.save
-    #   current_cart.cart_items.each do |item|
-    #     item.cart_id = nil
-    #     item.save!
-    #   end
-    # else
-    #
-    # end
-
-    # current_cart.cart_items.each do |item|
-    #   item.cart_id = nil
-    #   item.save
-    # end
-
-    # @order = Order.create(:cart_items => current_cart.cart_items);
-    # current_cart.cart_items.each do |item|
-    #   item.cart_id = nil
-    # end
-    # current_cart.save
-
-
-
-    # @order = Order.new
-    # @order.users_id = current_cart.users_id
-    # @user = User.find(@order.users_id);
-    # @order.shipping_cost = 15
-    # # order takes copys of current_cart's cart_items/products
-    # @order.cart_items = current_cart.cart_items
-    # @order.save
-    # #monkey wrench to clear current cart
-    # current_cart.cart_items = []
   end
 
   def index
