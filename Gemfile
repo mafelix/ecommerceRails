@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
+# gem for email css compiler
+gem 'roadie-rails', '~> 1.0'
 # fog gem for carrierwave:fog amazon s3 bucket
 gem 'fog'
 #figaro for fog environment variables
 gem 'figaro'
 # pry for debugging
-gem 'pry'
+gem 'pry-byebug'
 # font awesome for social media buttons
 gem "font-awesome-rails"
 # carrierwave for user images

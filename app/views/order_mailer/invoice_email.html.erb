@@ -38,12 +38,7 @@
           <div class="product-price"><%=number_to_currency(item.product.price)%></div>
 
           <%=item.quantity%>
-          <!-- <%=form_for item, remote: true do |f|%>
-          <div class="product-quantity">
-            <%=f.number_field :quantity, value: item.quantity, min: 1, max: 8%>
-            <%=f.hidden_field :product_id, value: item.product.id%>
-          </div>
-          <%end%> -->
+
           <div class="product-line-price"><%=number_to_currency(item.product.price*item.quantity)%></div>
         </div>
 
@@ -79,15 +74,9 @@
     </div>
     <!--end shopping cart -->
 
-    <div class="checkout-btn">
-      <button class="checkout" data-toggle="modal" data-target="#checkout-modal">Checkout</button>
-    </div>
-
     <div class="modal fade" id="checkout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel">Checkout Summary</h4>
           </div>
           <div class="modal-body">
@@ -126,29 +115,6 @@
             <br />
 
               <div class="row totals">
-                <!--subtotalrow  -->
-                <div class="col-md-2 col-xs-2"style="font-weight:bold;">
-                  <bold><u>Subtotal:</u></bold>
-                </div>
-
-                <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-2">
-                  <p>
-                    <%=number_to_currency(subtotal)%>
-                  </p>
-                </div>
-              </div>
-              <!--shippingrow  -->
-              <div class="row">
-                <div class="col-md-2 col-xs-2"style="font-weight:bold;">
-                  <bold><u>Shipping:</u></bold>
-                </div>
-
-                <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-2">
-                  <p>
-                    <%=number_to_currency(15)%>
-                  </p>
-                </div>
-              </div>
               <!--grandtotal row  -->
               <div class="row">
                 <div class="col-md-2 col-xs-2"style="font-weight:bold;">
@@ -171,7 +137,7 @@
                 <div class="col-md-6">
 
                   <p>
-                    Please ensure your order and shipping address are correct. Ordering means you accept all terms of service. Once you submit your order, you will recieve an email with instructions on how to pay. We appreciate your business. Your product will arrive in 3-5 business days on confirmation of payment.
+                    ****play your account information message here****
                   </p>
                 </div>
               </div>
@@ -211,7 +177,9 @@
               </div>
 
               <br />
-        
+              <p>
+                <%=@user.full_name%> is your shipping information correct? If it isn't you can edit your information <%=link_to 'here', edit_user_registration_path(@user)%>
+              </p>
             </div>
             <br/>
 
