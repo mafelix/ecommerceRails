@@ -1,5 +1,5 @@
 class OrdersController<ApplicationController
-before_action :cart_not_empty?
+# before_action :cart_not_empty?
   # orders are finalized in new order.
   def new
     @order_status = OrderStatus.create!()
@@ -13,12 +13,13 @@ before_action :cart_not_empty?
       item.order_id = @order.id
       item.save!
     end
-
+    
     if @order.save
-      current_cart.cart_items.each do |item|
-        item.cart_id = nil
-        item.save!
-      end
+      current_cart.empty!
+      # current_cart.cart_items.each do |item|
+      #   item.cart_id = nil
+      #   item.save!
+      # end
       OrderMailer.invoice_email(@user, @order)
     else
       redirect cart_show_path(@user.id)
@@ -34,14 +35,7 @@ before_action :cart_not_empty?
 protected
 
 
-  def cart_not_empty?
-    @order = current_cart
-    if @order.cart_items.size > 0
-      return true
-    else
-      return false
-    end
-  end
+
 
   def order_params
     params.require(:order).permit(:category, :shipping_cost, :total_cost, :users_id, :invoice_num, :subtotal)

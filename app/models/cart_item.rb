@@ -16,13 +16,12 @@ class CartItem < ActiveRecord::Base
   # def test_model
   #   return "It works"
   # end
-  # def empty_cart
-  #   current_cart.cart_items.each do |item|
-  #     puts item
-  #     item.cart_id = nil
-  #     puts item
-  #   end
-  # end
+  def empty_cart
+    self.each do |item|
+      item.cart_id = nil
+      item.save!
+    end
+  end
 
   def unit_price
     if persisted?
@@ -37,7 +36,7 @@ class CartItem < ActiveRecord::Base
   end
 
   def sub_total
-    current_cart.cart_items.collect {|item| item.valid? item.quantity * item.unit_price}.sum
+    cart_items.collect {|item| item.valid? item.quantity * item.unit_price}.sum
   end
 
   private

@@ -65,18 +65,5 @@ class ApplicationController < ActionController::Base
       redirect_to page_index_path
     end
   end
-          # original form for adding cart items to cart
-          # <%= form_for @cart_item, remote: true do |f| %>
-          # <div>
-          #   <div class="input-group">
-          #     <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-          #     <div class="input-group-btn">
-          #       <%= f.hidden_field :product_id, value: product.id%>
-          #       <%= f.submit "Add to Cart", class: "btn btn-primary"%>
-          #     </div>
-          #   </div>
-          # </div>
-          # <%end%>
-
 
 end

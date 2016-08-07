@@ -6,16 +6,32 @@
       <th>Invoice #</th>
       <th>Name</th>
       <th>Address</th>
+      <th>Products</th>
       <th>Total</th>
+      <th>Quantity</th>
       <th>Shipping Cost</th>
     </tr>
     <%if @orders != nil %>
       <% @orders.each do |order| %>
       <tr>
-        <td><%=order.id%></td>
-        <td><%=order.users_id%></td>
         <td><%=order.invoice_num%></td>
-        <td><%=order.total_cost%></td>
+        <td><%=User.find_by(id:order.users_id).full_name%></td>
+        <td><%=User.find_by(id:order.users_id).address%></td>
+        <td><%=order.cart_items.each do |item|%>
+            <%= item.product.name%>
+            <% end %>
+        </td>
+        <td>
+          <%if !order.cart_items.empty? %>
+            <%order.cart_items.each do |item| %>
+              <%Product.find_by(id: item.id)%>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%order.cart_items.each do |item|%>
+              <%= item.quantity %>
+            <%end%>
+        </td>
         <td><%=order.shipping_cost%></td>
       </tr>
       <%end%>
