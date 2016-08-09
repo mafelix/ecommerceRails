@@ -4,7 +4,7 @@ class Order<ActiveRecord::Base
   belongs_to :order_status
   has_many :cart_items
 
-  before_save :set_order_status
+  before_save :set_order_status, :sub_total
   # before_save :order_not_empty
 
   # has_many :carts
@@ -12,10 +12,10 @@ class Order<ActiveRecord::Base
 
   # before saving the order update the subtotal of the order.
 
-  # def subtotal
-  #   cart_items.collect {|cart_items| cart_items.valid? ? (cart_items.quantity * cart_items.unit_price) : 0}.sum
-  # end
-  #
+  def sub_total
+    self.subtotal = self.cart_items.collect {|cart_items| cart_items.total_price}.sum
+  end
+  
   private
 
   def set_order_status
